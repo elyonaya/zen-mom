@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	<main>
+		<section class="first">
+			<div class="sect1">
+				<h1 id="myT" class="hidden">"Prenez soin de vous,</br>
+				chères mamans,</br>
+			avec des massages apaisants</br>
+		conçus pour vous."</h1>
+	<a class="btn btnV grand" href="http://localhost/zenmom/zenmom-a-jour/html/massage.html">Découvrir</a>
+</div>
+<div class="sect2" id="galerie">
+	<img src="{{ asset('images/visage.jpg') }}" " alt=" image 1" class=" zen1" alt=" symfony!">
+
+</div></section><section class="second">
+<div>
+	<h3>Nos massages</h3>
+	<h1>"A chaque problème
+		<br>son massage."</h1>
+</div>
+
+<div class="mere1">
+
+	<div class="mere1" id="massage1">
+
+		<div class="msg1">
+			<div><img src="{{ asset('images/abdos.jpg')}}" alt="massage"></div>
+			<div>
+				<h2>Abdominal
+					<br>massage</h2>
+				<p>Massage de l'abdomen</p>
+
+				<button class="btn btnM" onclick="reserver('massage1','../images/abdos.jpg','massage Abdominal','Avec tous les pétrissages effectués sur votre corps, votre circulation sanguine sera stimulée. Le massage minceur cible spécifiquement les graisses et les zones en surpoids. Si vous avez de la cellulite, ils peuvent également s’efforcer de vous en débarrasser. Le massothérapeute travaillera à stimuler la circulation sanguine et lymphatique dans votre corps.')">
+					Réserver</button>
+			</div>
+
+		</div>
+
+		<div class="msg1" id="block1" id="massage2">
+			<div><img src="{{ asset('images/wombmassage.jpg')}}" alt="massage"></div>
+			<div>
+				<h2>Womb
+					<br>massage</h2>
+				<p>Massage de l'utérus</p>
+
+				<button class="btn btnM" onclick="reserver('massage2','/images/wombmassage.jpg','Womb Massage','Le massage de lutérus post-partum offre de multiples bienfaits aux nouvelles mères. Il contribue à réduire l’enflure utérine, apaise les douleurs après l’accouchement, et favorise l’élimination des déchets utérins. En stimulant les contractions utérines, il encourage un retour plus rapide à la forme normale de l’utérus. De plus, il aide à relâcher le stress et la tension, favorisant ainsi la détente des mamans en période post-partum.')">
+					Réserver</button>
+
+			</div>
+
+		</div>
+
+		<div class="msg1" id="massage3">
+			<div><img src="{{ asset('images/lymph.jpg')}}" alt="massage"></div>
+			<div>
+				<h2>Lymphatic<br>massage</h2>
+				<p>Massage Lymphatique</p>
+				<button class="btn btnM" onclick="reserver('massage3','/images/lymph.jpg','Massage Lymphatique','Un massage lymphatique post-partum est une technique de massage spécialisée et qui vise à stimuler le système lymphatique pour réduire le gonflement, favoriser la circulation lymphatique, aider à l’élimination des toxines et accélérer le processus de récupération post-partum. Ce type de massage peut contribuer à soulager le gonflement et l’inconfort post-accouchement et est souvent recherché par les femmes pendant la période post-partum.')">
+					Réserver</button>
+			</div>
+
+		</div>
+
+		<div class="msg1" id="block2" id="massage4">
+			<div><img src="{{ asset('images/sel.jpg')}}" alt="massage"></div>
+			<div>
+				<h2>Himalayan<br>
+					selt massage</h2>
+				<p>Massage au sel d'Himalaya</p>
+				<button class="btn btnM" onclick="reserver('massage4','/images/sel.jpg','Massage au sel d’Himalaya','Le massage au sel de l’Himalaya présente plusieurs bienfaits, notamment l’exfoliation naturelle de la peau, éliminant les cellules mortes et améliorant la texture de la peau. Les minéraux présents dans le sel de l’Himalaya nourrissent la peau et peuvent aider à restaurer son équilibre naturel. Ce type de massage favorise la détente, réduit le stress et apporte une sensation de bien-être. De plus, il stimule la circulation sanguine, contribuant à une peau plus saine.')">
+					Réserver</button>
+			</div>
+
+		</div>
+	</div>
+</section>
+<section class="last">
+	<div class="carte">
+		<h3>Plaisir d'offrir</h3>
+		<h1>"Un moment de pure détente et de
+		</br>
+		bien-être, offert avec amour."</h1>
+	<p>Le massage, un voyage sensoriel qui apaise le corps,<br>
+		calme l'esprit, et éveille un sentiment de plénitude. Une<br>
+		expérience bienfaisante pour le bien-être physique et<br>
+		mental.</p>
+	<a href="http://localhost/zenmom/zenmom-a-jour/html/offrir.html" alt="" class="btn btnM">Offrir</a>
+	<div class="carte1">
+		<img src="{{ asset('images/pierrerelax.jpg') }}" alt="massage relax">
+	</div>
+{% endblock %}
