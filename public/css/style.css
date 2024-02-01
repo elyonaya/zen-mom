@@ -448,7 +448,7 @@ footer div>div>h1>a{
     padding-left: 10px;
 }
 
-#email,#pwd{
+#inputEmail,#inputPassword{
     width: 341px;
     height: 30px;
     background: #FFFFFF;
@@ -477,55 +477,4 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
-}
-
-/* créer un compte  */
-
-form {
-    width: 90%;
-}
-
-.birthdate input {
-    margin-left: 5px_
-}
-
-#container_formulaire_ins p {
-    width:  90%;
-    margin: 5px;
-    font-family: 'Prata';
-    font-size: 12px;
-}
-
-.nomprenom, .birthdate {
-    flex-direction: row;
-}
-
-#container_formulaire_ins input{
-    font-family: 'Fjalla One';
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    height: 30px;
-    width: 45%;
-    padding-left: 10px;
-}
-
-#between {
-    border-top: 2px solid #5D3222;
-    height: 10px;
-    width: 25%;
-}
-
-#container_formulaire_ins #email, #container_formulaire_ins #password, #container-formulaire-ins #birthdate, #container-formulaire-ins h2 {
-    margin-bottom: 10px;
-}
-
-
-/*********/
-
-#container_formulaire_ins {
-    position: absolute;
-    top: 50;
-    left: 50;
-    display: none;
 }
