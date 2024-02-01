@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<!--Mon Compte-->
+        <div id="container_formulaire_con">
+            <!--Début du formulaire de connexion-->
+            <h2>Connexion</h2>
+                <form action="../php/login.php"  method="post" enctype="multipart/form-data">
+                    <label for="email">E-mail :</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="pwd">Mot de passe :</label><br>
+                    <input type="password" id="pwd" name="pwd" minlength="8" maxlength="16"><br><br>
+                    <input type="checkbox" id="se-souvenir" name="se-souvenir" >
+                    <label for="se-souvenir">Se souvenir de moi</label>
+                    <a href="#">Mot de passe oublié ?</a><br><br>
+                    <button id="btn_con" href="compte2.html ">Connexion</button>
+                    <br>
+                </form> 
+                <button id="creeruncompte" href="#container_formulaire_ins">Créer un compte</button>
+                <!--fin du formulaire--> 
+        </div>
+        {{form (form)}}
+
+
+{% endblock  %}
+
