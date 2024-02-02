@@ -1,3 +1,7 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+account:
+    path: /account
+    controller: App\Controller\AccountController::index
