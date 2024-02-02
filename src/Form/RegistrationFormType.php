@@ -22,11 +22,11 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('datenaissance', DateType::class)
-            ->add('adresse1')
-            ->add('adress2')
-            ->add('code_postale', IntegerType::class)
-            ->add('ville')
+            // ->add('datenaissance', DateType::class)
+            // ->add('adresse1')
+            // ->add('adress2')
+            // ->add('code_postale', IntegerType::class)
+            // ->add('ville')
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
