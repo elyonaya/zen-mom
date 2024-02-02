@@ -1,3 +1,27 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+account:
+    path: /account
+    controller: App\Controller\AccountController::index
+
+reset-password:
+    path: /reset-password
+    controller: App\Controller\ResetPasswordController::resetPassword
+    methods: [GET, POST]
+
+app_reset_password:
+    path: /reset/{token}
+    controller: App\Controller\ResetPasswordController::reset
+    methods: [GET, POST]
+
+app_check_email:
+    path: /check-email
+    controller: App\Controller\ResetPasswordController::checkEmail
+    methods: [GET, POST]
+
+app_forgot_password_request:
+    path: /reset-password
+    controller: App\Controller\ResetPasswordController::request
+    methods: [GET, POST]

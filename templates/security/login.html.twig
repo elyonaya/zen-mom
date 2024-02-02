@@ -3,6 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+    <section class="moncompte">
+ <div id="container_formulaire_con">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,18 +16,32 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+   
+        <h2 class="h3 mb-3 font-weight-normal">connexion</h2>
+        <label for="inputEmail">Email</label><br>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br><br>
+        <label for="inputPassword">Password</label><br>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br><br>
+        <input type="checkbox" id="se-souvenir" name="se-souvenir" >
+        <label for="se-souvenir">Se souvenir de moi</label>
+        <a href="{{ path('reset-password') }}">Mot de passe oublié</a><br><br>
+        
 
-    <input type="hidden" name="_csrf_token"
+        <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
-    >
+        >
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+        <button class="btn btn-lg btn-primary" type="submit">
+        Connexion
+        </button>
+
+        <h3 class="h3 mb-3 font-weight-normal">ou</h3>
+
+         <button class="btn btn-lg btn-primary">
+       <a href="{{ path('app_register') }}">Créer un compte</a>
+        </button>
+        
 </form>
+    </div>
+    </section>
 {% endblock %}

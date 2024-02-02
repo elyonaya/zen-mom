@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -28,6 +29,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $nom = null;
+
+    #[ORM\Column(length: 50)]
+    private ?string $prenom = null;
+
+    #[ORM\Column(type:"date", nullable:true)]
+    private ?\DateTimeInterface $datenaissance = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $adresse1 = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $adress2 = null;
+
+    #[ORM\Column]
+    private ?int $codePostale = null;
+
+    #[ORM\Column(length: 25)]
+    private ?string $ville = null;
 
     public function getId(): ?int
     {
@@ -97,5 +119,89 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): static
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): static
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->datenaissance;
+    }
+
+    public function setDateNaissance(\DateTimeInterface $datenaissance): static
+    {
+        $this->datenaissance = $datenaissance;
+
+        return $this;
+    }
+
+    public function getAdresse1(): ?string
+    {
+        return $this->adresse1;
+    }
+
+    public function setAdresse1(string $adresse1): static
+    {
+        $this->adresse1 = $adresse1;
+
+        return $this;
+    }
+
+    public function getAdress2(): ?string
+    {
+        return $this->adress2;
+    }
+
+    public function setAdress2(?string $adress2): static
+    {
+        $this->adress2 = $adress2;
+
+        return $this;
+    }
+
+    public function getCodePostale(): ?int
+    {
+        return $this->codePostale;
+    }
+
+    public function setCodePostale(int $codePostale): static
+    {
+        $this->codePostale = $codePostale;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): static
+    {
+        $this->ville = $ville;
+
+        return $this;
     }
 }
