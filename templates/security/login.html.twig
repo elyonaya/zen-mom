@@ -24,7 +24,7 @@
         <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br><br>
         <input type="checkbox" id="se-souvenir" name="se-souvenir" >
         <label for="se-souvenir">Se souvenir de moi</label>
-        <a href="#">Mot de passe oublié ?</a><br><br>
+        
 
         <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -32,6 +32,12 @@
 
         <button class="btn btn-lg btn-primary" type="submit">
         Connexion
+        </button>
+
+        <h3 class="h3 mb-3 font-weight-normal">ou</h3>
+
+         <button class="btn btn-lg btn-primary">
+       <a href="{{ path('app_register') }}">Créer un compte</a>
         </button>
         
 </form>
