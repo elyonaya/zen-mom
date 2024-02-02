@@ -1,47 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!{% endblock %}
+{% block title %}Hello AccountController!
+{% endblock %}
 
 {% block body %}
 
-    <aside>
-        <!--Les informations personnelles-->
-        <div class="mes-informations">
-        <div id="imgperso">
-            <img src="" alt="">
-        </div>
-        <button id="info">Mes informations</button>
-        <button>Mon adresse</button>
-        <button>Mes reservations</button>
-        <button>Gérer mon compte</button>
-        </div>
-    </aside>
-    <!--formulaire-personnelles-->
-    <section class="container1">
-        <div class="formulaire-personnelles">
-            <!--Début du formulaire-->
-            <form class="cordonnee">
-            
-                <h2>Mes informations personnelles</h2> 
-                <label for="lname">Nom : </label><br>
-                <input type="text" id="lname" name="lname">
-                <label for="fname">Prénom : </label>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="birthday">Date de naissance :</label><br>
-                <input type="date" id="birthday" name="birthday"><br><br>
-                <label for="phone">Téléphone :</label><br>
-                <input type="number" id="phone" name="phone" required max="13"><br><br>
-                <label for="email">E-mail : </label><br>
-                <input type="email" id="email" name="email"> <br>
-                <input id="save" type="submit" value="Enregister">
-                {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-            </form>
-            <!--fin du formulaire-->
-        </div>
-    </section>
+	<aside>
+		<!--Les informations personnelles-->
+		<div class="mes-informations">
+			<div id="imgperso">
+				<img src="" alt="">
+			</div>
+			<button id="info">Mes informations</button>
+			<button>Mon adresse</button>
+			<button>Mes reservations</button>
+			<button>Gérer mon compte</button>
+		</div>
+	</aside>
+	<!--formulaire-personnelles-->
+	<section class="container1">
+		<div
+			class="formulaire-personnelles">
+			<!--Début du formulaire-->
+			<form class="cordonnee">
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.userIdentifier }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% else %}
+					pas loggue
+				{% endif %}
+
+				<h2>Mes informations personnelles</h2>
+				<label for="lname">Nom :
+				</label><br>
+				<input type="text" id="lname" name="lname">
+				<label for="fname">Prénom :
+				</label>
+				<input type="text" id="fname" name="fname"><br><br>
+				<label for="birthday">Date de naissance :</label><br>
+				<input type="date" id="birthday" name="birthday"><br><br>
+				<label for="phone">Téléphone :</label><br>
+				<input type="number" id="phone" name="phone" required max="13"><br><br>
+				<label for="email">E-mail :
+				</label><br>
+				<input type="email" id="email" name="email">
+				<br>
+				<input id="save" type="submit" value="Enregister">
+
+			</form>
+			<!--fin du formulaire-->
+		</div>
+	</section>
 
 {% endblock %}
