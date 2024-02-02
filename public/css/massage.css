@@ -1,0 +1,69 @@
+/*****créer une page massage****/
+
+#container_formulaire_ins {
+    position: absolute;
+    top: 50;
+    left: 50;
+    display: none;
+}
+main>section {
+    padding-top: 100px;
+    padding-bottom: 100px;    
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: url(/images/Group\ 28section2.png) no-repeat right;
+}
+.second>h2{
+    font-family: 'Fjalla One';
+    font-style: normal;
+    color: #5D3222;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.second>p{
+    font-family: 'Prata';
+    font-style: normal;
+    color: #5D3222;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.first{
+    width: 500px;
+    margin: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px 100px  30px 30px;
+    background-color: #f2e7dc;
+    overflow: hidden;
+}
+.first>div:nth-of-type(1){
+    height:400px;
+}
+.first>div>img{
+    width: 100%;
+    height: 100%;
+}
+.first div:nth-of-type(2){
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    margin: 10px;
+}
+footer{
+    padding: 50px;
+    background-color: #D9CBBF;
+
+}
+footer>p {
+    text-align: center;}
+footer>p>a{
+    font-family: 'Prata';
+   font-style: normal;
+   color: #5D3222;
+   
+}
+/*****End page massage ****/
