@@ -39,16 +39,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type:"date", nullable:true)]
     private ?\DateTimeInterface $datenaissance = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable:true)]
     private ?string $adresse1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $adress2 = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable:true)]
     private ?int $codePostale = null;
 
-    #[ORM\Column(length: 25)]
+    #[ORM\Column(length: 25 , nullable:true)]
     private ?string $ville = null;
 
     public function getId(): ?int
