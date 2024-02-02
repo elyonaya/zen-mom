@@ -21,6 +21,7 @@
         <div class="formulaire-personnelles">
             <!--Début du formulaire-->
             <form class="cordonnee">
+            
                 <h2>Mes informations personnelles</h2> 
                 <label for="lname">Nom : </label><br>
                 <input type="text" id="lname" name="lname">
@@ -33,6 +34,11 @@
                 <label for="email">E-mail : </label><br>
                 <input type="email" id="email" name="email"> <br>
                 <input id="save" type="submit" value="Enregister">
+                {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
             </form>
             <!--fin du formulaire-->
         </div>
