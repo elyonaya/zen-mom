@@ -7,20 +7,26 @@
 									    Le massage post-partum favorise la détente et réduit les douleurs musculaires après l'accouchement, aidant ainsi à la récupération physique.
 									    Il peut contribuer à stimuler la circulation sanguine, apportant un soulagement aux nouvelles mamans.
 									    Le massage post-partum offre un moment de réconfort et de relaxation essentiel pendant cette période de changement et d'ajustement.">
-		{% block stylesheets %}
+		
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alex Brush">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla One">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prata">
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-			<link href="{{ asset('css/info.css') }}" rel="stylesheet"/>
 			<link href="{{ asset('css/massage.css') }}" rel="stylesheet"/>
 			
 			
-		{% endblock %}
+		
+
+		{% block stylesheet %}
+        
+
+	    {% endblock %}
+
+
 		<title>
-			{% block title %}
-				Massage
-			{% endblock %}
+		{% block title %}
+		 Massage
+		{% endblock %}
 		</title>
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}

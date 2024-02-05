@@ -1,17 +1,39 @@
 /***********************donnees personnelle apres connexion ****************/
 
 aside{
-    width: 325px;
+    width: 300px;
     height: 600px;
     background-color: #F2E7DC;
     border-radius: 100px 100px 0 0;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Fjalla One';   
     font-size: 20px;
+    float:left;
+
 }
+
+.mb-3{
+margin-top: auto;
+}
+
+
+button{
+  font-family: 'Fjalla One';
+  margin-top: 25px;
+  width: 280px;
+  height: 35px;
+  background: #C9856C;
+  background-color: rgb(201, 133, 108);
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
 #imgperso{
     width: 215px;
     height: 139px;
@@ -36,6 +58,7 @@ aside{
     font-family: 'Fjalla One';
     color: #5D3222;
     font-size: 20px;
+    float: right;
 }
 
 h2{
@@ -66,5 +89,7 @@ h2{
     background-color: #C9856C;    
     margin-left: 75%; 
 }
+
+
 
 /*********/
