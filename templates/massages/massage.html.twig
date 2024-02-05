@@ -1,29 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MassageController!{% endblock %}
+{% block title %}Hello MassageController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
 
-</style>
+	<main id="massage">
 
-<main id="massage">
+		<section>
+			{% for m in massage %}
+				<div class="premier" id="massage{{ m.id }}">
+					<div class="massage-img"><img src="{{m.photo}}" alt="massage au sel d'himalaya"></div>
+					<div class="secondaire">
+						<h2>{{ m.name }}
+						</h2>
+						<p>{{ m.description}}
+							<br>à partir de
+							{{ m.price}}€</p>
+						<button class="btn btnM" onclick="reserver('massage1','/images/abdos.jpg','massage Abdominal','Avec tous les pétrissages effectués sur votre corps, votre circulation sanguine sera stimulée. Le massage minceur cible spécifiquement les graisses et les zones en surpoids. Si vous avez de la cellulite, ils peuvent également s’efforcer de vous en débarrasser. Le massothérapeute travaillera à stimuler la circulation sanguine et lymphatique dans votre corps.')">Réserver</button>
+					</div>
+				</div>
+			{% endfor %}
 
-    <section>
-        {% for m in massage %}
-            <div class="first" id="massage{{ m.id }}">
-                <div class="massage-img"><img src="{{m.photo}}" alt="massage au sel d'himalaya"></div>
-                <div class="second">
-                    <h2>{{ m.name }} </h2>
-                    <p>{{ m.description}}
-                        <br>à partir de {{ m.price}}€</p>
-                        <button class="btn btnM" onclick="reserver('massage1','/images/abdos.jpg','massage Abdominal','Avec tous les pétrissages effectués sur votre corps, votre circulation sanguine sera stimulée. Le massage minceur cible spécifiquement les graisses et les zones en surpoids. Si vous avez de la cellulite, ils peuvent également s’efforcer de vous en débarrasser. Le massothérapeute travaillera à stimuler la circulation sanguine et lymphatique dans votre corps.')">Réserver</button>
-                </div>
-            </div>
-        {% endfor %}
-
-    </section>
-</main>
+		</section>
+	</main>
 {% endblock %}
