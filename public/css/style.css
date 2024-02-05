@@ -495,9 +495,7 @@ form {
     width: 90%;
 }
 
-.birthdate input {
-    margin-left: 5px_
-}
+
 
 #container_formulaire_ins p {
     width:  90%;
@@ -506,7 +504,7 @@ form {
     font-size: 12px;
 }
 
-.nomprenom, .birthdate {
+.nomprenom{
     flex-direction: row;
 }
 
@@ -521,7 +519,7 @@ form {
 }
 
 #between {
-    border-top: 2px solid #5D3222;
+    border-top: 2px solid #adec0d;
     height: 10px;
     width: 25%;
 }
