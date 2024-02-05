@@ -1,0 +1,99 @@
+main>h1{
+    display:flex;
+    justify-content: center;
+    color: #5D3222;
+    font-family: Fjalla One;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 5%;
+ }
+ main>section{
+    display:flex;
+    flex-wrap:wrap;
+ }
+ main>section>form{
+    width: 50%;
+    display:flex;
+    justify-content:space-between;
+    flex-direction: column;
+ }
+ main>section>form>div:first-of-type{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+ }
+ main>section>form>div:nth-of-type(2){
+    display:flex;
+    flex-direction: column;
+ }
+  main>section>form>div div{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+ }
+ main>section>form>div div:nth-of-type(odd){
+    box-sizing: border-box;
+ }
+ main>section>form label{
+    color: #5D3222;
+    font-family: Fjalla One;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-sizing: border-box;
+    padding-top: 30px;
+ }
+ main>section>form input{
+    width: 90%;
+    height: 35px;
+    border-radius: 6px;
+    background: #F2E7DC;
+    border: none;
+ }
+ main>section>form textarea{
+    width: 95%;
+    height: 50%;
+    box-sizing: border-box;
+    background: #F2E7DC;
+    border-radius: 6px;
+    border: none;
+ }
+ main>section>div{
+    width: 50%;
+ }
+ main>section>div>img {
+    width: 80%;
+    margin-left: 30%;
+    border-radius: 100px 100px 0px 0px;
+ }
+.checkbox{
+   width: 3%;
+   margin-right: 20px;
+   align-content: center;
+
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Ajustez la marge selon vos besoins */
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    margin-right: 5px; /* Ajustez la marge entre la case à cocher et le texte */
+  }
+
+#submit {
+    width: 176px;
+    height: 46px;
+    border-radius: 0px 20px;
+    background: #C9856C;
+    color: #FFF;
+    font-family: Prata;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

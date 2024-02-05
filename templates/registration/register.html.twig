@@ -1,21 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+	<section class="moncompte">
+		<div id="container_formulaire_con">
+			<h1>Créer un compte</h1>
 
-    {{ form_errors(registrationForm) }}
+			{{ form_errors(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.nom) }}
-    {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+			{{ form_start(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+			{{ form_row(registrationForm.nom , {id:'nom'} ) }}<br>
+			{{ form_row(registrationForm.prenom , {id:'prenom'}) }}<br>
+
+			{{ form_row(registrationForm.email , {id:'email'}) }}<br>
+			{{ form_row(registrationForm.plainPassword, {
+            label: 'Password',id:'pwd'}
+        ) }}<br>
+              <div class="custom-form-row">
+    {{ form_widget(registrationForm.agreeTerms) }}
+    {{ form_label(registrationForm.agreeTerms, 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', {'label_attr': {'class': 'custom-label-class'}}) }}
+</div>  
+		
+
+			<button type="submit" class="btn btnM" id="button_register">Créer un compte</button>
+			{{ form_end(registrationForm) }}
+		</div>
+	</section>
 {% endblock %}

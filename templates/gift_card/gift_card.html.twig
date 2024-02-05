@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link href="{{ asset('css/gift_card.css') }}" rel="stylesheet"/>			
+{% endblock %}
+
+{% block title %}Carte cadeau{% endblock %}
+
+{% block body %}
+
+<main>
+    <h1>Offrez l’expérience ZenMom</h1>
+
+  <section class="first">
+    <form>
+        <div>
+            <div>
+                <label for="mother_name">Prénom de la maman</label>
+                <input type="title"  id="mother_name"  name="name">
+                </div>
+                <div>
+                <label for="mother_telephone">Téléphone</label>
+                <input type="tel" id="mother_telephone" name="telephone"/>
+                </div>
+                <div>
+                <label for="mother_mail">E-mail</label>
+                <input type="email" id="mother_mail" name="mail"/>
+                </div>
+                <div>
+                <label for="gift_card_code">Code de votre carte cadeau</label>
+                <input type="text" id="gift_card_code"/>
+            </div>
+        </div>
+        <div class="perso_msg">
+         <label for="perso_msg">Votre message personnalisé pour la maman</label>
+         <textarea type="title" id="perso_msg" cols="30" rows="10"></textarea>
+        </div>
+        <label class="checkbox-label">
+            <input type="checkbox" class="checkbox">J’accepte les CGU ZenMom
+        </label>
+         <input type="submit" value="Suivant" id="submit"/>
+    </form>
+    <div id="gift_card_img">
+        <img src="../images/beaute-spa.jpg" alt="">
+    </div>
+
+  </section>
+       
+</main>
+
+{% endblock %}
