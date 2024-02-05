@@ -449,20 +449,35 @@ footer div>div>h1>a{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
+}
+
+#container_formulaire_con form {
+    width : 100%;
 }
 
 #container_formulaire_con input {
     font-family: 'Fjalla One';
     font-size: 14px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
 }
 
 #inputEmail,#inputPassword{
-    width: 341px;
+    width: 100%;
     height: 30px;
     background: #FFFFFF;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+#email,#pwd, #nom, #prenom{
+    
+    width: 100%;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -476,120 +491,15 @@ a{
     font-weight: bold;
 }
 
-button {
-    font-family: 'Fjalla One';
-    margin-top: 25px;
-    width: 350px;
-    height: 35px;
-    background: #C9856C;
-    border-radius: 20px 0;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-/* créer un compte  */
-
-form {
-    width: 90%;
-}
-
-.birthdate input {
-    margin-left: 5px_
-}
-
-#container_formulaire_ins p {
-    width:  90%;
-    margin: 5px;
-    font-family: 'Prata';
-    font-size: 12px;
-}
-
-.nomprenom, .birthdate {
-    flex-direction: row;
-}
-
-#container_formulaire_ins input{
-    font-family: 'Fjalla One';
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    height: 30px;
-    width: 45%;
-    padding-left: 10px;
-}
-
-#between {
-    border-top: 2px solid #5D3222;
-    height: 10px;
-    width: 25%;
-}
-
-#container_formulaire_ins #email, #container_formulaire_ins #password, #container-formulaire-ins #birthdate, #container-formulaire-ins h2 {
-    margin-bottom: 10px;
-}
-
-
-
-
-
-/*****créer une page massage****/
-
-#container_formulaire_ins {
-    position: absolute;
-    top: 50;
-    left: 50;
-    display: none;
-}
-main>section {
-    padding-top: 100px;
-    padding-bottom: 100px;    
-    padding-top: 100px;
+.custom-form-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    background: url(/images/Group\ 28section2.png) no-repeat right;
-}
-.second1>h2{
-    font-family: 'Fjalla One';
-    font-style: normal;
-    color: #5D3222;
-    font-weight: 400;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.second1>p{
-    font-family: 'Prata';
-    font-style: normal;
-    color: #5D3222;
-    font-size: 16px;
-    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Aligne les éléments horizontalement au centre */ 
 }
 
-.first1{
-    width: 500px;
-    margin: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 100px 100px  30px 30px;
-    background-color: #f2e7dc;
-    overflow: hidden;
+.custom-label-class {
+    margin-right: 20px; 
 }
-.first1>div:nth-of-type(1){
-    height:400px;
-}
-.first1>div>img{
-    width: 100%;
-    height: 100%;
-}
-.first1 div:nth-of-type(2){
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: left;
-    margin: 10px;
-}
-
-/*****End page massage ****/
 
 
