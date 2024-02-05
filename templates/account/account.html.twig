@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!
+{% block stylesheets %}
+<link href="{{ asset('css/.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block body %}
-
+	<main>
 	<aside>
 		<!--Les informations personnelles-->
 		<div class="mes-informations">
@@ -23,14 +24,6 @@
 			class="formulaire-personnelles">
 			<!--Début du formulaire-->
 			<form class="cordonnee">
-				{% if app.user %}
-					<div class="mb-3">
-						You are logged in as
-						{{ app.user.userIdentifier }},
-						<a href="{{ path('app_logout') }}">Logout</a>
-					</div>
-				
-				{% endif %}
 
 				<h2 id="h2-title">Mes informations personnelles</h2>
 				<label for="lname">Nom :
@@ -50,8 +43,18 @@
 				<input id="save" type="submit" value="Enregister">
 
 			</form>
-			<!--fin du formulaire-->
+
+<!--fin du formulaire-->
+			{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.userIdentifier }}
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				
+				{% endif %}
 		</div>
 	</section>
+	</main>
 
 {% endblock %}
