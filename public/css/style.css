@@ -463,7 +463,7 @@ footer div>div>h1>a{
 }
 
 #inputEmail,#inputPassword{
-    width: 341px;
+    width: 100%;
     height: 30px;
     background: #FFFFFF;
     border-radius: 5px;
@@ -471,12 +471,13 @@ footer div>div>h1>a{
 }
 
 #email,#pwd, #nom, #prenom{
-    /*width: 341px;*/
+    
     width: 100%;
     height: 30px;
     background: #FFFFFF;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -490,24 +491,15 @@ a{
     font-weight: bold;
 }
 
-.custom-label-class {
+.custom-form-row {
     display: flex;
-    flex-direction: row-reverse; /* Inverse l'ordre des éléments */
+    flex-direction: row;
     align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Aligne les éléments horizontalement au centre */ 
 }
-/*button {
-    font-family: 'Fjalla One';
-    margin-top: 25px;
-    width: 350px;
-    height: 35px;
-    background: #C9856C;
-    border-radius: 20px 0;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}*/
 
-
-
+.custom-label-class {
+    margin-right: 20px; 
+}
 
 

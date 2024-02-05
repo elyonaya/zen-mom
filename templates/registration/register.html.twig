@@ -6,7 +6,7 @@
 {% block body %}
 	<section class="moncompte">
 		<div id="container_formulaire_con">
-			<h1>S'inscrire</h1>
+			<h1>Créer un compte</h1>
 
 			{{ form_errors(registrationForm) }}
 
@@ -19,9 +19,13 @@
 			{{ form_row(registrationForm.plainPassword, {
             label: 'Password',id:'pwd'}
         ) }}<br>
-			{{ form_row(registrationForm.agreeTerms,  {'label': 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', 'label_attr': {'class': 'custom-label-class'} }) }}
+              <div class="custom-form-row">
+    {{ form_widget(registrationForm.agreeTerms) }}
+    {{ form_label(registrationForm.agreeTerms, 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', {'label_attr': {'class': 'custom-label-class'}}) }}
+</div>  
+		
 
-			<button type="submit" class="btn btnM">Créer un compte</button>
+			<button type="submit" class="btn btnM" id="button_register">Créer un compte</button>
 			{{ form_end(registrationForm) }}
 		</div>
 	</section>
