@@ -29,6 +29,7 @@
 				{{ form_errors(form) }}
 
 				{{ form_start(form) }}
+
 				{{ form_row(form.nom , {id:'nom'} ) }}<br>
 				{{ form_row(form.prenom , {id:'prenom'}) }}<br>
 				{{ form_row(form.datenaissance , {id:'birthday'}) }}<br>
@@ -38,17 +39,11 @@
 				{{ form_row(form.ville , {id:'ville'}) }}<br>
 				{{ form_row(form.email , {id:'email'}) }}<br>
 				{{ form_row(form.password, {label: 'Password',id:'pwd'}) }}<br>
-				<button type="submit" class="btn btnM" id="button_register">Modifier</button>
-				
-
+				<button type="submit" class="btn btnM" id="button_register">Enregistrer</button>
 				{{ form_end(form) }}
-				{# Bouton de suppression de compte #}
-                <form action="{{ path('app_deleteAccount', {id: app.user.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');">
-                    <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
-                </form>
 			</div>
 
-
+			
 			{% if app.user %}
 				<div class="mb-3">
 					You are logged in as
