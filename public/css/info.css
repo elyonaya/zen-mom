@@ -2,6 +2,10 @@
 main{
 
     background-color: #FFFFFF;
+    display: block;
+    
+}
+#interne{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -14,6 +18,24 @@ main{
     gap: 20px;
     padding: 60px 20px;
     align-items: stretch;
+
+}
+#deconnexion{
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
+    padding: 20px;
+    font-family: 'Alex Brush';
+    font-size: 30px;
+    
+}
+.mb-3{
+    display: flex;
+    justify-content: space-between;
+}
+.mb-2{
+    width: 100%;
+  text-align: center;
 }
 aside{
   width: 30%;
@@ -29,7 +51,9 @@ aside{
 .mes-informations{
     width: 100%;
 }
-
+.formulaire-personnelles h1{
+    text-align: center;
+}
 .menu {
     display: flex;
     flex-direction: column;
@@ -74,8 +98,7 @@ aside button {
     font-family: 'Fjalla One';
     color: #5D3222;
     font-size: 20px;
-    display: flex;
-    justify-content: center;
+
 }
 
 
