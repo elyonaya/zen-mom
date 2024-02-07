@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block title %}Log in!
 {% endblock %}
@@ -13,20 +12,20 @@
 				<div id="Connexion">
 					<img src="{{ asset('images/logo_connexion.png') }}" alt="Logo de connexion">
 					<h2 class="h3 mb-3 font-weight-normal">connexion</h2>
-					
+
 				</div>
 				<label for="inputEmail">Email</label><br>
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br><br>
 				<label for="inputPassword">Password</label><br>
 				<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br><br>
 				<div id="separe">
-					<div>	
+					<div>
 						<input type="checkbox" id="se-souvenir" name="se-souvenir">
 						<label for="se-souvenir">Se souvenir de moi</label>
 					</div>
-					<div>	
+					<div>
 						<a href="{{ path('reset-password') }}">Mot de passe oublié</a><br><br>
-					</div>	
+					</div>
 				</div>
 
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -44,10 +43,20 @@
 					</div>
 				</div>
 				{% if error %}
-					<div class="alert alert-danger">Votre adresse e-mail ou votre mot de passe est incorrect.<br> Veuillez réessayer.</div>
+					<div class="alert alert-danger">Votre adresse e-mail ou votre mot de passe est incorrect.<br>
+						Veuillez réessayer.</div>
 				{% endif %}
-				
+
 			</form>
 		</div>
 	</section>
+
+	<script>
+		window.addEventListener('load', function () { // Vérifiez si l'utilisateur est déjà connecté
+			if ({{ app.user ? 'true' : 'false' }}) { // Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
+				window.history.replaceState(null, '', 
+				'{{ path('account') }}');
+					}
+				});
+	</script>
 {% endblock %}
