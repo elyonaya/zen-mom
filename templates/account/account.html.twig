@@ -40,13 +40,13 @@
 				{{ form_row(form.ville , {id:'ville'}) }}<br>
 				{{ form_row(form.email , {id:'email'}) }}<br>
 				{{ form_row(form.password, {label: 'Password',id:'pwd'}) }}<br>
-				<button type="submit" class="btn btnM " >Modifier</button>
+				<button type="submit" class="btn btnM " id="save">Modifier</button>
 
 
 				{{ form_end(form) }}
 				{# Bouton de suppression de compte #}
 				<form action="{{ path('app_deleteAccount', {id: app.user.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');">
-					<button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+					<button type="submit" class="btn btn-danger" id="delete">Supprimer mon compte</button>
 				</form>
 			</div>
 

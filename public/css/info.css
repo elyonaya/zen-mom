@@ -104,14 +104,24 @@ label {
     font-size: 20px;
 }
 #save{
-    width: 176px;
-    height: 50px;
+    width: 100%;
     border-radius: 0 20px;
-    color: white;
     font-family: 'Prata';
     font-size: 20px;
-    background-color: #C9856C;    
-    margin-left: 75%; 
+   
+    
+}
+#delete{
+    width: 100%;
+    border-radius: 0 20px;
+    font-family: 'Prata';
+    font-size: 20px;
+   
+}
+#button-ms{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 /*********/
