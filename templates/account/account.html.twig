@@ -5,7 +5,24 @@
 {% endblock %}
 
 {% block body %}
+   
 	<main>
+	<div id='deconnexion'>
+   {% if app.user %}
+				<div class="mb-3">
+				    <div class="mb-2">
+					Bonjour
+					{{ app.user.prenom }}
+					{{ app.user.nom }}
+					</div>
+					<div>
+						<a href="{{ path('app_logout') }}">Déconnexion</a>
+					</div>	
+				</div>
+
+			{% endif %}
+   </div>
+   <div id="interne">
 		<aside>
 			<!--Les informations personnelles-->
 			<div class="mes-informations">
@@ -50,16 +67,7 @@
 				</form>
 			</div>
 
-
-			{% if app.user %}
-				<div class="mb-3">
-					Bonjour
-					{{ app.user.prenom }}
-					{{ app.user.nom }}
-					<a href="{{ path('app_logout') }}">Déconnexion</a>
-				</div>
-
-			{% endif %}
 		</div>
 	</section>
+	</div>
 </main>{% endblock %}
