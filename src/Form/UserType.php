@@ -6,10 +6,10 @@ use App\Entity\User;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -56,7 +56,7 @@ class UserType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('datenaissance', DateType::class, [
+            ->add('datenaissance', BirthdayType::class, [
                 'required' => true,
                 'label' => "date de naissance"
             ])
@@ -72,9 +72,7 @@ class UserType extends AbstractType
             ->add('ville', TextareaType::class, [
                 'label' => "Ville"
             ])
-            ->add('save', SubmitType::class, [
-                'label' => "Enregistrer"
-            ])
+            
         ;
       
           

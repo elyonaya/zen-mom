@@ -1,42 +1,83 @@
 /***********************donnees personnelle apres connexion ****************/
+main{
 
-aside{
-    width: 325px;
-    height: 600px;
-    background-color: #F2E7DC;
-    border-radius: 100px 100px 0 0;
-    margin: 0 auto;
+    background-color: #FFFFFF;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-family: 'Fjalla One';   
-    font-size: 20px;
+    align-items: flex-start;
+    font-family: 'Fjalla One';
+    font-size: 24px;
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-top: 30px;
+    gap: 20px;
+    padding: 60px 20px;
+    align-items: stretch;
+}
+aside{
+  width: 30%;
+  background-color: #F2E7DC;
+  border-radius: 40px 40px 0 0;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Fjalla One';
+  font-size: 20px;
+  display: flex;
+}
+.mes-informations{
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    gap: 5px;
 }
 #imgperso{
-    width: 215px;
-    height: 139px;
-    background-color: white;
-    border: 1px solid rgba(214, 31, 31, 0.363);
-    border-radius:30px 30px 0 0 ;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    width: 90%;
+  height: 139px;
+  background-color: white;
+  border: 1px solid rgba(214, 31, 31, 0.363);
+  border-radius: 40px 40px 0 0;
+  margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  margin-bottom: 30px;
+  margin-top: 9px;
+}
+
+aside button {
+    display: block;
+    padding: 25px;
+    font-family: 'Fjalla One';
+    font-size: 20px;
+    
 }
 
 #info{
   
     background-color: #C9856C;
     color: white;
+    border-radius: 20px 20px 0 0;
+   
+
 }
 .container1{
     width: 877px;
-    height: 600px;
+    padding : 20px;
     background-color: #F2E7DC;
     border-radius: 30px 30px 0 0;
     margin: 0 auto;
     font-family: 'Fjalla One';
     color: #5D3222;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
+
 
 h2#h2-title{
     color: #5D3222;
@@ -47,14 +88,20 @@ h2#h2-title{
 .cordonnee{
     margin: 60px 30px;
 }
-#lname, #fname, #birthday, #phone, #email{
+#lname, #fname,  #phone, #email{
     width: 350px;
     height: 50px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 12px;
     font-family: 'Fjalla One';
     color: #5D3222;
     font-size: 20px; 
+}
+
+label {
+    display: block;
+    font-family: 'Fjalla One';
+    font-size: 20px;
 }
 #save{
     width: 176px;

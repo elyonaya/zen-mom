@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-@font-face {
+/*@font-face {
     font-family: 'Alex Brush';
     src: url('/fonts/Alex_Brush/AlexBrush-Regular.eot');
     src: url('/fonts/Alex_Brush/AlexBrush-Regular.eot?#iefix') format('embedded-opentype'),
@@ -34,7 +34,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+}*/
 /****************style general******************/
 a{
     text-decoration: none;
@@ -63,6 +63,10 @@ body {
 }
 .btnM{
     background: #C9856C;
+    color: #D9D7C5;
+}
+.btn-danger{
+    background: #c03d40;
     color: #D9D7C5;
 }
 /******debut du header*********/
@@ -431,7 +435,6 @@ footer div>div>h1>a{
     display: flex;   
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     border-radius: 20px 0; 
 }
 
@@ -452,11 +455,7 @@ footer div>div>h1>a{
 
 #container_formulaire_con form {
     width : 100%;
-    display: flex;
-    flex-direction: column;
-
-
-    
+   
 }
 #button_register{
     margin-top: 40px;
