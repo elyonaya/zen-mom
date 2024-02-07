@@ -425,9 +425,15 @@ footer div>div>h1>a{
     width : 100%;
    
 }
+#container_formulaire_con form h2{
+    
+    text-align: center;
+   
+}
 #container_formulaire_con h1{
     text-align: center;
 }
+
 #button_register{
   margin-top: 40px;
   display: flex;
@@ -448,7 +454,7 @@ footer div>div>h1>a{
     margin-top: 10px;
 }
 
-#email,#pwd, #nom, #prenom{
+#email,#emailConfirmation, #pwdConfirmation, #pwd{
     
     width: 100%;
     height: 30px;
@@ -461,13 +467,13 @@ footer div>div>h1>a{
 
 a{
     font-family: 'Fjalla One';
-    margin-left: 50px;
     text-decoration: none;
     cursor: pointer;
     color: #5D3222;
     font-size: 16px;
     font-weight: bold;
 }
+
 
 
 .custom-form-row {
@@ -481,5 +487,34 @@ a{
     margin-right: 20px; 
     margin-left: 13px;
 }
+.alert {
+    color: red;
+}
+
+#Connexion img {
+    width: 100px; /* Ajuste la taille du logo selon  préférences */
+    height: auto; /* Garde le ratio de l'image */
+    margin-bottom: 20px; /* Ajoute un espace en dessous du logo */
+    margin-top: 20px; /* Ajoute un espace en haut du logo */
+}
+
+#Connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+}
 
 
+#divM{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+#separe  a{
+    justify-content: end;
+   
+}
