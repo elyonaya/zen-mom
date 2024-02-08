@@ -56,6 +56,7 @@ header nav ul li {
     margin : 0 20px;
     padding: 30px;
 }
+
 header nav ul li a{
     text-decoration: none;/****enleve le soulignement****/
     color: #5D3222;
@@ -72,6 +73,19 @@ header nav ul li a:hover {
     font-size: 60px;
     font-weight: 400;
     color: #5D3222;
+}
+#header .menu-toggle {
+    display: none; 
+    cursor: pointer;
+    padding: 30px;
+}
+
+#header .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    background-color:  #5D3222;
 }
 .first{
     height: 100vh;
@@ -289,41 +303,51 @@ footer >div>div>h1{
     
 }
 footer div>div>h1>a{
-    text-decoration: none;/****enleve le soulignement****/
+    text-decoration: none; 
     color: #5D3222;
-}
+    font-family:'Alex Brush';
+    font-weight: 400;
+    font-size: 50px;
+} 
 .ul1{
    list-style: none;
    font-family: 'Prata';
    font-style: normal;
+   font-size: 25px;
    color: #5D3222;
    padding: 50px;
   }
 .ul1 >li{
     margin-top: 10px;
     margin-left: 40px;
+    white-space: nowrap;
 }
 .ul1>li>a{
     text-decoration: none;
     color: #5D3222;
+    font-size: 20px;
 }
 .ul2{
     list-style: none;
     font-family: 'Prata';
     font-style: normal;
+    font-size: 25px;
     color: #5D3222;
     padding: 50px;
    }
  .ul2 >li{
      margin-top: 10px;
      margin-left: 40px;
+     white-space: nowrap;
  }
  .ul2>li>a{
      text-decoration: none;
      color: #5D3222;
+     font-size: 20px;
  }
  .foot1{
-    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     padding: 50px;
@@ -340,6 +364,9 @@ footer div>div>h1>a{
           font-style: normal;
           font-weight: 400;
           color: #5D3222;
+          white-space: nowrap;
+          font-size: 25px;
+          padding-right: 50px;
       }
       .foot1>div> a:nth-last-of-type(2){
         margin: 20px;
@@ -348,10 +375,7 @@ footer div>div>h1>a{
 .foot2>ul {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 30px;
-    
-    
-    
+    margin-bottom: 30px;  
 }
 .foot2 >ul>li{
  font-family: 'Prata';
@@ -362,13 +386,21 @@ footer div>div>h1>a{
 .foot2 >ul>li>a{
     font-family: 'Prata';
        font-style: normal;
+       font-size: 25px;
        font-weight: 400;
        color: #5D3222;
+       white-space: nowrap;
    }
 .divfoot1{
     display: flex;
     justify-content: center;
 }
+
+
+
+
+
+
 
 @keyframes fadeIn {
     from {
@@ -507,7 +539,86 @@ a{
  
 }
 
+/* Affichage du menu hamburger lorsque le nav est masqué */
+@media screen and (max-width: 740px) {
+    #header nav {
+        display: none;
+    }
+    #header .menu-toggle {
+        display: block; 
+    }
+    #header nav ul {
+        justify-content: center; 
+    }
+    #header nav ul li {
+        margin: 0 10px; 
+    }
+    #logo a {
+        font-size: 40px; 
+        
+    }
+}
+/* Responsive design for footer */
+@media screen and (max-width: 740px) {
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center; 
+        margin: 10px;;
+       
+    }
 
+<<<<<<< HEAD
+    .divfoot1 a {
+        font-size: 30px;
+       
+    }
+
+    .ul1, .ul2 {
+        font-size: 20px;
+        padding: 20px; 
+    }
+
+    .ul1 > li, .ul2 > li {
+        margin-top: 10px;
+        margin-left: 0; 
+    }
+
+    .ul1 > li > a, .ul2 > li > a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .foot1, .foot2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+       
+    }
+
+    .foot1 > p, .foot1 > p > a {
+        margin-bottom: 30px;
+    }
+
+    .foot1 > p > a {
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .foot1 > div > a {
+        margin-left: 2px;
+    }
+
+   
+
+    .foot2 > ul > li > a {
+        font-size: 20px;
+    }
+}
+=======
 #divM{
     display: flex;
     flex-direction: column;
@@ -531,3 +642,4 @@ a{
     
 }
 
+>>>>>>> c294fc8e546c46504f3e810c021ecf416020b149
