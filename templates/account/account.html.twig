@@ -56,8 +56,10 @@
 				{{ form_row(form.code_postale , {id:'code_postale'}) }}<br>
 				{{ form_row(form.ville , {id:'ville'}) }}<br>
 				{{ form_row(form.email , {id:'email'}) }}<br>
-				{{ form_row(form.password, {label: 'Password',id:'pwd'}) }}<br>
+				{{ form_row(form.email_confirmation , {id:'email_confi'}) }}<br>
+				{{ form_row(form.plainPassword, {label: 'Mot de passe',id:'pwd'}) }}<br>
 				<button type="submit" class="btn btnM " id="save">Modifier</button>
+				
 
 
 				{{ form_end(form) }}
@@ -70,17 +72,4 @@
 		</div>
 	</section>
 	</div>
-</main>
- 		{% block javascripts %}
-
-			<script>
-    				window.addEventListener('load', function () { 
-        			// Vérifiez si l'utilisateur est déjà connecté en utilisant l'objet global app fourni par Symfony
-        			{% if app.user %}
-            		// Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
-           	 		window.history.replaceState(null, '', '{{ path('app_home') }}');
-        			{% endif %}
-    			});
-			</script>
-    	{% endblock %} 
-{% endblock %}
+</main>{% endblock %}

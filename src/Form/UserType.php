@@ -25,8 +25,12 @@ class UserType extends AbstractType
                 'required' => true, 
                 'label' => "Email"
                 ])
-            //->add('roles')
-            ->add('password', PasswordType::class, [
+            ->add('email_confirmation', EmailType::class, [
+                    'required' => true, 
+                    'label' => "Confirmation email"
+                    ])    
+            
+            ->add('plainPassword', PasswordType::class, [
                 'required' => true,
                 'label' => "Mot de passe "
             ])
@@ -34,9 +38,6 @@ class UserType extends AbstractType
                 'required' => true,
                 'label' => "Nom",
             'constraints' => [
-                new NotBlank([
-                   'message' => 'Veuillez saisir un nom'
-                ]),
                 new Length([
                    'min' => 2,
                    'minMessage' => 'Le nom doit contenir au minimum {{ limit }} caractères'
@@ -47,9 +48,6 @@ class UserType extends AbstractType
                 'required' => true,
                 'label' => "Prenom" ,
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez saisir un nom'
-                    ]),
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Le nom doit contenir au minimum {{ limit }} caractères'
@@ -72,6 +70,9 @@ class UserType extends AbstractType
             ->add('ville', TextareaType::class, [
                 'label' => "Ville"
             ])
+            // ->add('submit', SubmitType::class, [
+            //     'label' => 'Modifier',
+            // ]);
             
         ;
       
