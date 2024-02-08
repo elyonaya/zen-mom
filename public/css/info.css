@@ -60,7 +60,7 @@ aside{
     margin: 0 10px;
     gap: 5px;
 }
-#imgperso{
+/* #imgperso{
     width: 90%;
   height: 139px;
   background-color: white;
@@ -71,6 +71,15 @@ aside{
     margin-bottom: 0px;
   margin-bottom: 30px;
   margin-top: 9px;
+} */
+#imgperso img{
+    width: 90%;
+    height: 50%;
+    border-radius: 40px 40px 0 0;
+    margin-bottom: 30px;
+    margin-top: 9px;
+    margin-left: 20px;
+    
 }
 
 aside button {
