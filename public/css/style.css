@@ -2,39 +2,7 @@
     padding: 0;
     margin: 0;
 }
-@font-face {
-    font-family: 'Alex Brush';
-    src: url('/fonts/Alex_Brush/AlexBrush-Regular.eot');
-    src: url('/fonts/Alex_Brush/AlexBrush-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Alex_Brush/AlexBrush-Regular.woff2') format('woff2'),
-        url('/fonts/Alex_Brush/AlexBrush-Regular.woff') format('woff'),
-        url('/fonts/Alex_Brush/AlexBrush-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fjalla One';
-    src: url('/fonts/Fjalla_One/FjallaOne-Regular.eot');
-    src: url('/fonts/Fjalla_One/FjallaOne-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Fjalla_One/FjallaOne-Regular.woff2') format('woff2'),
-        url('/fonts/Fjalla_One/FjallaOne-Regular.woff') format('woff'),
-        url('/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Prata';
-    src: url('/fonts/Prata/Prata-Regular.eot');
-    src: url('/fonts/Prata/Prata-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Prata/Prata-Regular.woff2') format('woff2'),
-        url('/fonts/Prata/Prata-Regular.woff') format('woff'),
-        url('/fonts/Prata/Prata-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+
 /****************style general******************/
 a{
     text-decoration: none;
@@ -53,16 +21,20 @@ body {
     font-family: 'Prata';
     font-size: 16px;
     margin: 0 auto;
-    }
+}
 .grand{
         font-size: 30px;
-        }
+}
 .btnV{
         background: #D9D7C5;
         color: #5D3222;
-        }
+}
 .btnM{
     background: #C9856C;
+    color: #D9D7C5;
+}
+.btn-danger{
+    background: #c03d40;
     color: #D9D7C5;
 }
 /******debut du header*********/
@@ -84,6 +56,7 @@ header nav ul li {
     margin : 0 20px;
     padding: 30px;
 }
+
 header nav ul li a{
     text-decoration: none;/****enleve le soulignement****/
     color: #5D3222;
@@ -95,11 +68,24 @@ header nav ul li a{
 header nav ul li a:hover {
     border-bottom: 2px solid  #5D3222; /** ajoute une bordure en bas lors du survol de couleur blanche */
 }
-#logo{
+#logo a{
     font-family:'Alex Brush';
     font-size: 60px;
     font-weight: 400;
     color: #5D3222;
+}
+#header .menu-toggle {
+    display: none; 
+    cursor: pointer;
+    padding: 30px;
+}
+
+#header .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    background-color:  #5D3222;
 }
 .first{
     height: 100vh;
@@ -108,8 +94,8 @@ header nav ul li a:hover {
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
-    background: url(/images/sect1\ img1.png) no-repeat left ;
-    background-size: 550px 800px;
+    background: url(/images/Ellipse21.png) no-repeat left ;
+    background-size: 20% 80%;
 }
 .sect1{
     width: 50%;
@@ -139,7 +125,7 @@ margin-bottom: 50px;
         padding-bottom: 100px;
         text-align: center;
         flex-direction: column;
-        background: url(/images/Group\ 28section2.png);
+        background: url(/images/img1.png);
         background-repeat: no-repeat;
         background-position: right;
 }
@@ -165,6 +151,16 @@ color: #5D3222;
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.mere1 .btn{
+    width: 65%;
+    border-radius: 0px 20px;
+    font-size: 2Opx;
+    border: none;
+    color: white;
+    margin-top: 10px;
+}
+
 .msg1{
     width: 270px;
     margin: 20px;
@@ -216,14 +212,10 @@ color: #5D3222;
 
 .last{  
         padding-top: 100px;
-        padding-bottom: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
        flex-wrap: wrap;
-        background: url(/images/Ellipse\ 22.png);
-        background-repeat: no-repeat;
-        background-position: left 300px;
 }
 
 .carte{
@@ -311,41 +303,51 @@ footer >div>div>h1{
     
 }
 footer div>div>h1>a{
-    text-decoration: none;/****enleve le soulignement****/
+    text-decoration: none; 
     color: #5D3222;
-}
+    font-family:'Alex Brush';
+    font-weight: 400;
+    font-size: 50px;
+} 
 .ul1{
    list-style: none;
    font-family: 'Prata';
    font-style: normal;
+   font-size: 25px;
    color: #5D3222;
    padding: 50px;
   }
 .ul1 >li{
     margin-top: 10px;
     margin-left: 40px;
+    white-space: nowrap;
 }
 .ul1>li>a{
     text-decoration: none;
     color: #5D3222;
+    font-size: 20px;
 }
 .ul2{
     list-style: none;
     font-family: 'Prata';
     font-style: normal;
+    font-size: 25px;
     color: #5D3222;
     padding: 50px;
    }
  .ul2 >li{
      margin-top: 10px;
      margin-left: 40px;
+     white-space: nowrap;
  }
  .ul2>li>a{
      text-decoration: none;
      color: #5D3222;
+     font-size: 20px;
  }
  .foot1{
-    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     padding: 50px;
@@ -362,6 +364,9 @@ footer div>div>h1>a{
           font-style: normal;
           font-weight: 400;
           color: #5D3222;
+          white-space: nowrap;
+          font-size: 25px;
+          padding-right: 50px;
       }
       .foot1>div> a:nth-last-of-type(2){
         margin: 20px;
@@ -370,10 +375,7 @@ footer div>div>h1>a{
 .foot2>ul {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 30px;
-    
-    
-    
+    margin-bottom: 30px;  
 }
 .foot2 >ul>li{
  font-family: 'Prata';
@@ -384,13 +386,21 @@ footer div>div>h1>a{
 .foot2 >ul>li>a{
     font-family: 'Prata';
        font-style: normal;
+       font-size: 25px;
        font-weight: 400;
        color: #5D3222;
+       white-space: nowrap;
    }
 .divfoot1{
     display: flex;
     justify-content: center;
 }
+
+
+
+
+
+
 
 @keyframes fadeIn {
     from {
@@ -422,7 +432,6 @@ footer div>div>h1>a{
     display: flex;   
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     border-radius: 20px 0; 
 }
 
@@ -437,29 +446,60 @@ footer div>div>h1>a{
     background: #F2EAE4;
     border-radius: 0 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
+
+#container_formulaire_con form {
+    width : 100%;
+   
+}
+#container_formulaire_con form h2{
+    
+    text-align: center;
+   
+}
+#container_formulaire_con h1{
+    text-align: center;
+}
+
+#button_register{
+  margin-top: 40px;
+  display: flex;
+}
+
 
 #container_formulaire_con input {
     font-family: 'Fjalla One';
     font-size: 14px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
+}
+#container_formulaire_con  button{
+    font-size: 25px;
+
 }
 
-#email,#pwd{
-    width: 341px;
+#inputEmail,#inputPassword{
+    width: 100%;
     height: 30px;
     background: #FFFFFF;
     border-radius: 5px;
     margin-top: 10px;
 }
 
+#email,#emailConfirmation, #pwdConfirmation, #pwd{
+    
+    width: 100%;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 a{
     font-family: 'Fjalla One';
-    margin-left: 50px;
     text-decoration: none;
     cursor: pointer;
     color: #5D3222;
@@ -467,114 +507,139 @@ a{
     font-weight: bold;
 }
 
-button {
-    font-family: 'Fjalla One';
-    margin-top: 25px;
-    width: 350px;
-    height: 35px;
-    background: #C9856C;
-    border-radius: 20px 0;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* créer un compte  */
-
-form {
-    width: 90%;
-}
-
-.birthdate input {
-    margin-left: 5px_
-}
-
-#container_formulaire_ins p {
-    width:  90%;
-    margin: 5px;
-    font-family: 'Prata';
-    font-size: 12px;
-}
-
-.nomprenom, .birthdate {
-    flex-direction: row;
-}
-
-#container_formulaire_ins input{
-    font-family: 'Fjalla One';
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    height: 30px;
-    width: 45%;
-    padding-left: 10px;
-}
-
-#between {
-    border-top: 2px solid #5D3222;
-    height: 10px;
-    width: 25%;
-}
-
-#container_formulaire_ins #email, #container_formulaire_ins #password, #container-formulaire-ins #birthdate, #container-formulaire-ins h2 {
-    margin-bottom: 10px;
-}
 
 
-/*********/
-
-#container_formulaire_ins {
-    position: absolute;
-    top: 50;
-    left: 50;
-    display: none;
-}
-
-/*****page massage****/
-main>section {
-    padding-top: 100px;
-    padding-bottom: 100px;    
-    padding-top: 100px;
+.custom-form-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    background: url(/images/Group\ 28section2.png) no-repeat right;
-}
-.second>h2{
-    font-family: 'Fjalla One';
-    font-style: normal;
-    color: #5D3222;
-    font-weight: 400;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.second>p{
-    font-family: 'Prata';
-    font-style: normal;
-    color: #5D3222;
-    font-size: 16px;
-    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Aligne les éléments horizontalement au centre */ 
 }
 
-.first{
-    width: 500px;
-    margin: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 100px 100px  30px 30px;
-    background-color: #f2e7dc;
-    overflow: hidden;
+.custom-label-class {
+    margin-right: 20px; 
+    margin-left: 13px;
 }
-.first>div:nth-of-type(1){
-    height:400px;
+.alert {
+    color: red;
 }
-.first>div>img{
-    width: 100%;
-    height: 100%;
+
+#Connexion img {
+    width: 100px; /* Ajuste la taille du logo selon  préférences */
+    height: auto; /* Garde le ratio de l'image */
+    margin-bottom: 20px; /* Ajoute un espace en dessous du logo */
+    margin-top: 20px; /* Ajoute un espace en haut du logo */
 }
-.first div:nth-of-type(2){
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: left;
-    margin: 10px;
+
+#Connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
 }
+
+/* Affichage du menu hamburger lorsque le nav est masqué */
+@media screen and (max-width: 740px) {
+    #header nav {
+        display: none;
+    }
+    #header .menu-toggle {
+        display: block; 
+    }
+    #header nav ul {
+        justify-content: center; 
+    }
+    #header nav ul li {
+        margin: 0 10px; 
+    }
+    #logo a {
+        font-size: 40px; 
+        
+    }
+}
+/* Responsive design for footer */
+@media screen and (max-width: 740px) {
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center; 
+        margin: 10px;;
+       
+    }
+
+<<<<<<< HEAD
+    .divfoot1 a {
+        font-size: 30px;
+       
+    }
+
+    .ul1, .ul2 {
+        font-size: 20px;
+        padding: 20px; 
+    }
+
+    .ul1 > li, .ul2 > li {
+        margin-top: 10px;
+        margin-left: 0; 
+    }
+
+    .ul1 > li > a, .ul2 > li > a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .foot1, .foot2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+       
+    }
+
+    .foot1 > p, .foot1 > p > a {
+        margin-bottom: 30px;
+    }
+
+    .foot1 > p > a {
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .foot1 > div > a {
+        margin-left: 2px;
+    }
+
+   
+
+    .foot2 > ul > li > a {
+        font-size: 20px;
+    }
+}
+=======
+#divM{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#divM a{
+    font-family: 'Prata';
+    text-decoration: none;
+    cursor: pointer;
+    color: #D9D7C5;
+    font-size: 25px;
+    
+}
+
+
+#href {
+    margin-left: 150px;
+    
+}
+
+>>>>>>> c294fc8e546c46504f3e810c021ecf416020b149

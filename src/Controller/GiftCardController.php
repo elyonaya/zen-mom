@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MassageController extends AbstractController
+class GiftCardController extends AbstractController
 {
-    #[Route('/massage', name: 'app_massage')]
+    #[Route('/gift_card', name: 'app_gift_card')]
     public function index(): Response
     {
-        return $this->render('massage/massage.html.twig', [
-            'controller_name' => 'MassageController',
+        return $this->render('gift_card/gift_card.html.twig', [
+            'controller_name' => 'GiftCardController',
         ]);
     }
 }

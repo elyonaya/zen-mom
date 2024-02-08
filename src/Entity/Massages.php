@@ -2,81 +2,97 @@
 
 namespace App\Entity;
 
+use App\Repository\MassagesRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\UX\Turbo\Attribute\Broadcast;
 
-/**
- * Massages
- *
- * @ORM\Table(name="massages")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: MassagesRepository::class)]
+#[Broadcast]
 class Massages
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="Id_massage", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idMassage;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=25, nullable=false)
-     */
-    private $name;
+    #[ORM\Column(length: 50)]
+    private ?string $name = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
-     */
-    private $description;
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="prix", type="integer", nullable=false)
-     */
-    private $prix;
+    #[ORM\Column]
+    private ?float $price = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="string", length=50, nullable=false)
-     */
-    private $photo;
+    #[ORM\Column(length: 255)]
+    private ?string $photo = null;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="duree", type="string", length=30, nullable=false)
-     */
-    private $duree;
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $duration = null;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Masseurs", inversedBy="idMassage")
-     * @ORM\JoinTable(name="pratique",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="Id_massage", referencedColumnName="Id_massage")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="Id_masseur", referencedColumnName="Id_masseur")
-     *   }
-     * )
-     */
-    private $idMasseur = array();
-
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function getId(): ?int
     {
-        $this->idMasseur = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->id;
     }
 
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): static
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo): static
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getDuration(): ?\DateTimeInterface
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(\DateTimeInterface $duration): static
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
 }
