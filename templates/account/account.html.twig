@@ -70,4 +70,17 @@
 		</div>
 	</section>
 	</div>
-</main>{% endblock %}
+</main>
+ 		{% block javascripts %}
+
+			<script>
+    				window.addEventListener('load', function () { 
+        			// Vérifiez si l'utilisateur est déjà connecté en utilisant l'objet global app fourni par Symfony
+        			{% if app.user %}
+            		// Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
+           	 		window.history.replaceState(null, '', '{{ path('app_home') }}');
+        			{% endif %}
+    			});
+			</script>
+    	{% endblock %} 
+{% endblock %}

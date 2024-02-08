@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+
 // //conserver les infos lors du clique reserver 
 
 // function reserver(choix,image, titre, description) {

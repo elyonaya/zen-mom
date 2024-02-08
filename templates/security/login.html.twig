@@ -43,17 +43,6 @@
 			</form>
 		</div>
 	</section>
-	{% block javascripts %}
-
-		<script>
-    		window.addEventListener('load', function () { 
-        		// Vérifiez si l'utilisateur est déjà connecté en utilisant l'objet global app fourni par Symfony
-        		{% if app.user %}
-            		// Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
-           	 		window.history.replaceState(null, '', '{{ path('account') }}');
-        		{% endif %}
-    		});
-		</script>
-    {% endblock %}
+	
 
 {% endblock %}
