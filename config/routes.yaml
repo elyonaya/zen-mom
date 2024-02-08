@@ -25,3 +25,10 @@ app_forgot_password_request:
     path: /reset-password
     controller: App\Controller\ResetPasswordController::request
     methods: [GET, POST]
+
+
+
+app_updateAccount:
+    path: /updateAccount/{id}
+    controller: 'App\Controller\AccountController::updateAccount'
+    methods: ['POST']

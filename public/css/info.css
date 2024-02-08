@@ -120,7 +120,7 @@ h2#h2-title{
 .cordonnee{
     margin: 60px 30px;
 }
-#lname, #fname,  #phone, #email{
+#ville, #code_postale,  #adress2, #email, #adress2, #nom, #prenom, #pwd,#email_confi, #adresse1{
     width: 350px;
     height: 50px;
     background-color: rgb(255, 255, 255);
