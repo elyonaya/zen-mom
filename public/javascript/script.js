@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Sélectionnez l'élément h1
     var myT = document.getElementById('myT');
@@ -7,6 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
         myT.classList.add('anime');
     }, 1000);
 });
+
+// Fonction toggleNav(): Cette fonction est responsable de l'affichage ou de la masquage de la barre de navigation.
+function toggleNav() {
+    var nav = document.querySelector('#header nav');
+    if (nav.style.display === 'none' || nav.style.display === '') {
+        nav.style.display = 'block';
+    } else {
+        nav.style.display = 'none';
+    }
+}
 
 
 //conserver les infos lors du clique reserver 
