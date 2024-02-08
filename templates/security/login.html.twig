@@ -18,20 +18,13 @@
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br><br>
 				<label for="inputPassword">Password</label><br>
 				<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br><br>
-				<div id="separe">
-					<div>
-						<input type="checkbox" id="se-souvenir" name="se-souvenir">
-						<label for="se-souvenir">Se souvenir de moi</label>
-					</div>
-					<div>
-						<a href="{{ path('reset-password') }}">Mot de passe oublié</a><br><br>
-					</div>
-				</div>
-
+				<input type="checkbox" id="se-souvenir" name="se-souvenir">
+				<label for="se-souvenir">Se souvenir de moi</label>
+				<a href="{{ path('reset-password') }}" id="href">Mot de passe oublié</a><br><br>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<div id="divM">
 					<button class="btn btnV btnM" type="submit">
-						Connexion
+						Connectez-vous
 					</button>
 					<div id="divFille">
 						<h3 class="h3 mb-3 font-weight-normal">ou</h3>
@@ -50,13 +43,17 @@
 			</form>
 		</div>
 	</section>
+	{% block javascripts %}
 
-	<script>
-		window.addEventListener('load', function () { // Vérifiez si l'utilisateur est déjà connecté
-			if ({{ app.user ? 'true' : 'false' }}) { // Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
-				window.history.replaceState(null, '', 
-				'{{ path('account') }}');
-					}
-				});
-	</script>
+		<script>
+    		window.addEventListener('load', function () { 
+        		// Vérifiez si l'utilisateur est déjà connecté en utilisant l'objet global app fourni par Symfony
+        		{% if app.user %}
+            		// Remplacez l'état actuel de l'historique de navigation par une redirection vers une autre page
+           	 		window.history.replaceState(null, '', '{{ path('account') }}');
+        		{% endif %}
+    		});
+		</script>
+    {% endblock %}
+
 {% endblock %}
