@@ -1,0 +1,292 @@
+/******debut du header*********/
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul {
+    height: 50px; /**hauteur de la UL**/
+    display: flex; /**premettre aux enfants liste les uns a coté des autres**/
+    list-style: none; /* enleve les ronds de la liste */
+    align-items: center; /**répartition sur la hauteur**/
+    justify-content: flex-end; /*repartition sur la largeur*/
+    padding: 20px;
+}
+header nav ul li {
+    margin : 0 20px;
+    padding: 30px;
+}
+
+header nav ul li a{
+    text-decoration: none;/****enleve le soulignement****/
+    color: #5D3222;
+    font-family: 'Fjalla One';
+    margin: 10px;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+header nav ul li a:hover {
+    border-bottom: 2px solid  #5D3222; /** ajoute une bordure en bas lors du survol de couleur blanche */
+}
+#logo a{
+    font-family:'Alex Brush';
+    font-size: 60px;
+    font-weight: 400;
+    color: #5D3222;
+    padding: 20px;
+}
+#header .menu-toggle {
+    display: none; 
+    cursor: pointer;
+    padding: 20px;
+}
+
+#header .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    background-color:  #5D3222;
+}
+
+/*****************debut du Footer****************/
+footer{
+    width: 100%;
+    background-color: #D9CBBF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+footer >div>div>h1{
+    font-family:'Alex Brush';
+    font-size: 60px;
+    font-weight: 400;
+    color: #5D3222;
+    line-height: 75px;
+    padding: 50px;
+    
+}
+footer div>div>h1>a{
+    text-decoration: none; 
+    color: #5D3222;
+    font-family:'Alex Brush';
+    font-weight: 400;
+    font-size: 50px;
+} 
+.ul1{
+   list-style: none;
+   font-family: 'Prata';
+   font-style: normal;
+   font-size: 25px;
+   color: #5D3222;
+   padding: 50px;
+  }
+.ul1 >li{
+    margin-top: 10px;
+    margin-left: 40px;
+    white-space: nowrap;
+}
+.ul1>li>a{
+    text-decoration: none;
+    color: #5D3222;
+    font-size: 20px;
+}
+.ul2{
+    list-style: none;
+    font-family: 'Prata';
+    font-style: normal;
+    font-size: 25px;
+    color: #5D3222;
+    padding: 50px;
+   }
+ .ul2 >li{
+     margin-top: 10px;
+     margin-left: 40px;
+     white-space: nowrap;
+ }
+ .ul2>li>a{
+     text-decoration: none;
+     color: #5D3222;
+     font-size: 20px;
+ }
+ .foot1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    }
+ .foot1 >p{
+    font-family: 'Prata';
+       font-style: normal;
+       font-weight: 400;
+       margin-bottom: 20px;
+       
+   }
+   .foot1>p>a{
+       font-family: 'Prata';
+          font-style: normal;
+          font-weight: 400;
+          color: #5D3222;
+          white-space: nowrap;
+          font-size: 25px;
+          padding-right: 50px;
+      }
+      .foot1>div> a:nth-last-of-type(2){
+        margin: 20px;
+
+      }
+.foot2>ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;  
+}
+.foot2 >ul>li{
+ font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    
+}
+.foot2 >ul>li>a{
+    font-family: 'Prata';
+       font-style: normal;
+       font-size: 25px;
+       font-weight: 400;
+       color: #5D3222;
+       white-space: nowrap;
+   }
+.divfoot1{
+    display: flex;
+    justify-content: center;
+}
+/* Affichage du menu hamburger lorsque le nav est masqué */
+/* Responsive design for header */
+@media screen and (max-width: 740px) {
+    #header nav {
+        display: none;
+    }
+    #header .menu-toggle {
+        display: block; 
+    }
+    #header nav ul {
+        justify-content: center; 
+    }
+    #header nav ul li {
+        margin: 0 10px; 
+    }
+    #logo a {
+        font-size: 40px; 
+        
+    }
+}
+/* Responsive design for footer */
+@media screen and (max-width: 740px) {
+    footer {
+        width: 100%;
+        background-color: #D9CBBF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+
+    footer > div > div > h1 {
+        font-family: 'Alex Brush';
+       
+        font-weight: 400;
+        color: #5D3222;
+        line-height: 1;
+        margin: 0;
+        padding: 10px;
+    }
+
+    footer div > div > h1 > a {
+        text-decoration: none;
+        color: #5D3222;
+        font-family: 'Alex Brush';
+        font-weight: 400;
+        font-size: 50px;
+    }
+
+    .ul1, .ul2 {
+        list-style: none;
+        font-family: 'Prata';
+        font-style: normal;
+        font-size: 30px;
+        color: #5D3222;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .ul1 > li, .ul2 > li {
+        margin-top: 8px;
+        margin-left: 0;
+        margin-bottom: 10px; /* Increase the margin bottom */
+    }
+
+    .ul1 > li > a, .ul2 > li > a {
+        text-decoration: none;
+        color: #5D3222;
+        font-size: 16px;
+    }
+
+    .foot1, .foot2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .foot1 > p, .foot1 > p > a {
+        font-family: 'Prata';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        color: #5D3222;
+        margin: 0;
+    }
+
+    .foot1 > p > a {
+        margin-right: 20px;
+    }
+
+    .foot1 > div > a:nth-last-of-type(2) {
+        margin: 10px;
+    }
+
+    .foot2 > ul > li {
+        margin: 10px;
+      
+    }
+
+    .foot2 > ul > li > a {
+        font-family: 'Prata';
+        font-style: normal;
+        font-size: 30px;
+        font-weight: 400;
+        color: #5D3222;
+    }
+
+    .divfoot1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+

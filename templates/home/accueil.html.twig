@@ -2,6 +2,9 @@
 
 {% block title %}Hello HomeController!
 {% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('css/accueil.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block body %}
 <br>
@@ -106,4 +109,6 @@
 	<div class="carte1">
 		<img src="{{ asset('images/pierrerelax.jpg') }}" alt="massage relax">
 	</div>
+	</div>
+</section>
 {% endblock %}

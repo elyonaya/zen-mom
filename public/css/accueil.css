@@ -1,0 +1,224 @@
+.first{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    background: url(/images/Ellipse21.png) no-repeat left ;
+    background-size: 20% 80%;
+}
+.sect1{
+    width: 50%;
+    position: relative;
+    left: 10%;
+}
+.sect1 h1{
+font-family: 'Prata';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 65px;
+color: #5D3222;
+margin-bottom: 50px;
+}
+
+.sect2{
+       width: 50%;
+}
+.sect2 img{
+    width: 90%;
+    border-radius: 100px 100px 0px 0px;
+}
+/************section 2 ***************/
+.second{
+        padding-top: 15%;
+        padding-bottom: 100px;
+        text-align: center;
+        flex-direction: column;
+        background: url(/images/img1.png);
+        background-repeat: no-repeat;
+        background-position: right;
+}
+.second h1{
+text-align: center;
+font-family: 'Prata';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+color: #5D3222;
+}
+.second h3{
+    text-align: center;
+    font-family: 'Fjalla One';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    color: #5D3222;
+}
+.mere1{
+    padding-top: 3%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mere1 .btn{
+    width: 65%;
+    border-radius: 0px 20px;
+    font-size: 2Opx;
+    border: none;
+    color: white;
+    margin-top: 10px;
+}
+
+.msg1{
+    width: 270px;
+    margin: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px 100px  30px 30px;
+    background-color: #f2e7dc;
+    overflow: hidden;
+    
+}
+.msg1 div:nth-of-type(1){
+    height: 200px;
+}
+.msg1 img{
+    height: 100%;
+    width: 100%;
+
+}
+.msg1 div:nth-of-type(2){
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.msg1 h2{
+    font-family: 'Fjalla One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color: #5D3222;
+    margin-bottom: 10px;
+}
+.msg1 p{
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #5D3222;
+}
+
+#block1{
+    position: relative;
+    top: 100px;
+}
+#block2{
+    position: relative;
+    top: 100px;
+}
+
+.last{  
+        padding-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       flex-wrap: wrap;
+}
+
+.carte{
+    width: 1296px;
+    height: 500px;
+    background: #D9D9D9;
+    border-radius: 0px 100px;
+    
+
+}
+.carte >h3 {
+    font-family: 'Fjalla One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #5D3222;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.carte >h1 {
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    color: #5D3222;
+    text-align: left;
+    margin-left: 50px;
+}
+.carte >p {
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #5D3222;
+    text-align: left;
+    margin-left: 50px;
+   
+   
+}
+.carte .btn{
+    display: inline-block;
+    padding: 5px 50px;
+    border-radius: 0px 20px;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-top: 20px;
+ 
+}
+
+.carte> a{
+    border: none;
+    font-family: 'Prata';
+    font-size: 18px;
+    color: #fff;
+}
+.carte1{
+  width: 395.95px;
+  height: 486.96px;
+  position: relative;
+ left:835px;
+ bottom: 330px;
+}
+.carte1 >img {
+max-width: 100%;
+height:auto;
+border-radius: 100px 100px 0px 0px;
+
+}
+@media screen and (max-width: 740px) {
+    .first {
+      
+        background-size: 15% 50%;
+        
+    }
+    .sect1 h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .sect2 img {
+        border-radius: 50%;
+    }
+    .second{
+        padding-top: 60px;
+      
+    }
+    .last{  
+        width: 100%;
+}
+
+
+   
+}
+
+
