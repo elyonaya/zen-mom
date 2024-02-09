@@ -1,4 +1,7 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link href="{{ asset('css/massage.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block title %}Hello MassageController!
 {% endblock %}
@@ -34,6 +37,24 @@
 				</div>
 			{% endfor %}
 
+<<<<<<< HEAD
+    <section>
+        {% for m in massage %}
+            <div class="premier" id="massage{{ m.id }}">
+                <div class="massage-img"><img src="{{m.photo}}" alt="massage au sel d'himalaya"></div>
+                <div class="secondaire">
+                    <h2>{{ m.name }} </h2>
+                    <p>{{ m.description}}
+                        <br>à partir de {{ m.price}}€</p>
+                        <button class="btn btnM" onclick="reserver('massage1','/images/abdos.jpg','massage Abdominal','Avec tous les pétrissages effectués sur votre corps, votre circulation sanguine sera stimulée. Le massage minceur cible spécifiquement les graisses et les zones en surpoids. Si vous avez de la cellulite, ils peuvent également s’efforcer de vous en débarrasser. Le massothérapeute travaillera à stimuler la circulation sanguine et lymphatique dans votre corps.')">Réserver</button>
+                </div>
+            </div>
+        {% endfor %}
+
+    </section>
+</main>
+=======
 		</section>
 	</main>
+>>>>>>> 94ad2b2b6581c046ddfaa426395ad260553a64ae
 {% endblock %}

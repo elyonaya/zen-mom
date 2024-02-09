@@ -6,19 +6,23 @@
 {% block body %}
 	<section class="moncompte">
 		<div id="container_formulaire_con">
-			<h1>Créer un compte</h1>
+			<h1>S'inscrire</h1>
 
 			{{ form_errors(registrationForm) }}
 
 			{{ form_start(registrationForm) }}
 
-			{{ form_row(registrationForm.nom , {id:'nom'} ) }}<br>
-			{{ form_row(registrationForm.prenom , {id:'prenom'}) }}<br>
+			
 
 			{{ form_row(registrationForm.email , {id:'email'}) }}<br>
+			{{ form_row(registrationForm.emailConfirmation, {id:'emailConfirmation', label: 'Confirmez votre email'}) }}<br> {# Champ de confirmation de l'email #}
 			{{ form_row(registrationForm.plainPassword, {
-            label: 'Password',id:'pwd'}
+            label: 'mot de passe',id:'pwd'}
         ) }}<br>
+		{{ form_row(registrationForm.plainPasswordConfirmation, {
+                label: 'Confirmez votre mot de passe',id:'pwdConfirmation'}
+            ) }}<br> {# Champ de confirmation du mot de passe #}
+
               <div class="custom-form-row">
     {{ form_widget(registrationForm.agreeTerms) }}
     {{ form_label(registrationForm.agreeTerms, 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', {'label_attr': {'class': 'custom-label-class'}}) }}

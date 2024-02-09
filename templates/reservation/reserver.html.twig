@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link href="{{ asset('css/jereserve.css') }}" rel="stylesheet"/>			
+{% endblock %}
+
+{% block title %}ReservationController!{% endblock %}
+
+{% block body %}
+<main>
+    <aside>
+     <div id="infoMassage" >
+     </div>
+    </aside>
+    <section>
+     <div id="buttons">
+      <button id="jereservepourmoi"> <a href="/html/jereserve1.html">Je réserve pour moi</a> </button>
+      <button id="jaiunecartecadeau"><a href="/html/cartek.html">J'ai une carte cadeau</a> </button>
+     </div>
+
+     <!-- FORM ETAPE 1 -->
+    <div id="formulaire-e1">
+      <form>
+         <h2 class="fjalla">Personnalisation</h2>
+         <img id="tunnel" src="../images/tunnel1.png">
+
+         <form>
+             <legend class="fjalla">La durée</legend>
+             <label><input type="radio" name="radio" />30min - 30€</label><br>
+             <label><input type="radio" name="radio" />45min - 45€</label><br>
+             <label><input type="radio" name="radio" />60min - 60€</label>
+         </form>
+
+         <form>
+             <legend class="fjalla">Choix de l'huile</legend>
+             <div>
+                <label><input type="radio" name="radio" />Huile de lavande</label>
+                <img src="../images/info.png" alt="Infos">
+             </div>
+             <div>
+                <label><input type="radio" name="radio" />Huile d'amande douce</label>
+                <img src="../images/info.png" alt="Infos">
+             </div>
+             <div>
+                <label><input type="radio" name="radio"/>Huile d'argan</label>
+                <img src="../images/info.png" alt="Infos">
+             </div>
+         </form>
+
+             <label for="lieu" class="lieu">Lieu</label>
+             <input type="lieu" name="lieu" id="lieu" required/><br>
+
+             <button><input id="suivant1" type="submit" value="Suivant"/></button>
+      </form>
+     </div>
+
+{% endblock %}

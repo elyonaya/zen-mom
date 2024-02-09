@@ -2,6 +2,9 @@
 
 {% block title %}Hello HomeController!
 {% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('css/accueil.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block body %}
 <br>
@@ -24,16 +27,17 @@
 				chères mamans,</br>
 			avec des massages apaisants</br>
 		conçus pour vous."</h1>
-	<a class="btn btnV grand" href="http://localhost/zenmom/zenmom-a-jour/html/massage.html">Découvrir</a>
+	<a class="btn btnV grand" href="">Découvrir</a>
 </div>
 <div class="sect2" id="galerie">
-	<img src="{{ asset('images/visage.jpg') }}" " alt=" image 1" class=" zen1" alt=" symfony!">
+	<img src="{{ asset('images/visage.jpg') }}"  alt=" image 1" class=" zen1" alt=" symfony!">
 
-</div></section><section class="second">
+</div>
+</section>
+<section class="second">
 <div>
 	<h3>Nos massages</h3>
-	<h1>"A chaque problème
-		<br>son massage."</h1>
+	<h1>"A chaque problème <br>son massage."</h1>
 </div>
 
 <div class="mere1">
