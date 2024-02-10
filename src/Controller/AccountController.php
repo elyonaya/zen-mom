@@ -2,42 +2,40 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Form\UserType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use App\Entity\User; // Importation de la classe User
+use App\Form\UserType; // Importation du formulaire UserType
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; // Importation du contrôleur abstrait de Symfony
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface; // Importation de l'interface UserPasswordHasherInterface
+use Symfony\Component\HttpFoundation\Response; // Importation de la classe Response de Symfony
+use Symfony\Component\HttpFoundation\Request; // Importation de la classe Request de Symfony
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface; // Importation de l'interface TokenStorageInterface pour le stockage du jeton
+use Symfony\Component\Routing\Annotation\Route; // Importation de l'annotation Route pour définir les routes
+use Doctrine\ORM\EntityManagerInterface; // Importation de l'EntityManagerInterface pour la gestion des entités
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use Symfony\Component\Routing\Annotation\Route;
-
-use Doctrine\ORM\EntityManagerInterface;
-
-
-class AccountController extends AbstractController
+class AccountController extends AbstractController // Définition de la classe AccountController, qui hérite du contrôleur abstrait
 {
-    private $entityManager;
+    private $entityManager; // Déclaration de la propriété entityManager
+    private $tokenStorage; // Déclaration de la propriété tokenStorage
 
-    public function __construct(EntityManagerInterface $manager ,TokenStorageInterface $tokenStorage)
+    public function __construct(EntityManagerInterface $manager, TokenStorageInterface $tokenStorage) // Définition du constructeur
     {
-        $this->entityManager = $manager;
-        $this->tokenStorage = $tokenStorage;
+        $this->entityManager = $manager; // Initialisation de la propriété entityManager
+        $this->tokenStorage = $tokenStorage; // Initialisation de la propriété tokenStorage
     }
 
-    #[Route('/account', name: 'app_account')]
-    public function account(Request $request, UserPasswordHasherInterface $userPasswordHasher): Response
+    #[Route('/account', name: 'app_account')] // Annotation Route pour définir la route /account
+    public function account(Request $request, UserPasswordHasherInterface $userPasswordHasher): Response // Définition de la méthode account avec les paramètres Request et UserPasswordHasherInterface
     {
-        $user = $this->getUser();
+        $user = $this->getUser(); // Récupération de l'utilisateur actuellement authentifié
 
-        if (!$user) {
-            return $this->redirectToRoute('app_login');
+        if (!$user) { // Vérification si l'utilisateur est connecté
+            return $this->redirectToRoute('app_login'); // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
         }
 
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+        $form = $this->createForm(UserType::class, $user); // Création du formulaire en utilisant UserType et les données de l'utilisateur
+        $form->handleRequest($request); // Gestion de la requête du formulaire
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) { // Vérification si le formulaire est soumis et valide
             // Hasher le mot de passe uniquement s'il a été modifié dans le formulaire
             if ($form->get('plainPassword')->getData() !== null) {
                 $user->setPassword(
@@ -48,60 +46,57 @@ class AccountController extends AbstractController
                 );
             }
 
-            $this->entityManager->flush();
+            $this->entityManager->flush(); // Enregistrer les modifications dans la base de données
 
-            $this->addFlash('success', 'Account updated successfully!');
+            $this->addFlash('success', 'Account updated successfully!'); // Ajout d'un message flash de succès
 
-            return $this->redirectToRoute('app_account');
+            return $this->redirectToRoute('app_account'); // Redirection vers la page de compte
         }
 
-        return $this->render('account/account.html.twig', [
-            'form' => $form->createView(),
+        return $this->render('account/account.html.twig', [ // Rendu du template account.html.twig avec le formulaire
+            'form' => $form->createView(), // Passage du formulaire à la vue
         ]);
     }
 
-    #[Route('/updateAccount', name: 'app_updateAccount')]
-public function updateAccount(Request $request, $id): Response
-{
-    $user = $this->entityManager->getRepository(User::class)->find($id);
-
-    if (!$user) {
-        throw $this->createNotFoundException('User not found');
-    }
-
-    $form = $this->createForm(UserType::class, $user);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-        // Sauvegarder les modifications dans la base de données
-        $this->entityManager->flush();
-
-        $this->addFlash('success', 'Account updated successfully!');
-
-        return $this->redirectToRoute('app_account');
-    }
-
-    return $this->render('account/update_account.html.twig', [
-        'form' => $form->createView(),
-    ]);
-}
-    #[Route('/deleteAccount/{id}', name: 'app_deleteAccount')]
-    public function deleteAccount(Request $request, $id): Response
+    #[Route('/updateAccount', name: 'app_updateAccount')] // Annotation Route pour définir la route /updateAccount
+    public function updateAccount(Request $request, $id): Response // Définition de la méthode updateAccount avec les paramètres Request et $id
     {
-        $user = $this->entityManager->getRepository(User::class)->find($id);
+        $user = $this->entityManager->getRepository(User::class)->find($id); // Récupération de l'utilisateur à partir de l'identifiant
 
-        if (!$user) {
-            throw $this->createNotFoundException('User not found');
+        if (!$user) { // Vérification si l'utilisateur existe
+            throw $this->createNotFoundException('User not found'); // Lancer une exception si l'utilisateur n'est pas trouvé
         }
 
-        // Supprimer l'utilisateur de la base de données
-        $this->entityManager->remove($user);
-        $this->entityManager->flush();
-        // Déconnexion de l'utilisateur
-        $this->tokenStorage->setToken(null);
+        $form = $this->createForm(UserType::class, $user); // Création du formulaire en utilisant UserType et les données de l'utilisateur
+        $form->handleRequest($request); // Gestion de la requête du formulaire
 
+        if ($form->isSubmitted() && $form->isValid()) { // Vérification si le formulaire est soumis et valide
+            $this->entityManager->flush(); // Enregistrer les modifications dans la base de données
 
-        // Rediriger vers une page de confirmation ou une autre action
-        return $this->redirectToRoute('app_home'); 
+            $this->addFlash('success', 'Account updated successfully!'); // Ajout d'un message flash de succès
+
+            return $this->redirectToRoute('app_account'); // Redirection vers la page de compte
+        }
+
+        return $this->render('account/update_account.html.twig', [ // Rendu du template update_account.html.twig avec le formulaire
+            'form' => $form->createView(), // Passage du formulaire à la vue
+        ]);
+    }
+
+    #[Route('/deleteAccount/{id}', name: 'app_deleteAccount')] // Annotation Route pour définir la route /deleteAccount avec un paramètre {id}
+    public function deleteAccount(Request $request, $id): Response // Définition de la méthode deleteAccount avec les paramètres Request et $id
+    {
+        $user = $this->entityManager->getRepository(User::class)->find($id); // Récupération de l'utilisateur à partir de l'identifiant
+
+        if (!$user) { // Vérification si l'utilisateur existe
+            throw $this->createNotFoundException('User not found'); // Lancer une exception si l'utilisateur n'est pas trouvé
+        }
+
+        $this->entityManager->remove($user); // Suppression de l'utilisateur de la base de données
+        $this->entityManager->flush(); // Enregistrer les modifications dans la base de données
+
+        $this->tokenStorage->setToken(null); // Déconnexion de l'utilisateur
+
+        return $this->redirectToRoute('app_home'); // Redirection vers la page d'accueil
     }
 }
