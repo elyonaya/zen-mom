@@ -53,3 +53,16 @@ if (choixMassageJSON) {
   // Gérer le cas où le choix n'est pas défini
   document.body.innerHTML += "<p>Aucun choix de massage sélectionné</p>";
 }
+  // afficher le message d'erreur lorsque l'utilisateur commence à taper dans le champ de mot de passe 
+
+  $(document).ready(function() {
+    $('#pwd, #pwdConfirmation').on('input', function() {
+        var password = $('#pwd').val();
+        var confirmPassword = $('#pwdConfirmation').val();
+        if (password.length > 0 && !/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}/.test(password)) {
+            $('.password-help').show();
+        } else {
+            $('.password-help').hide();
+        }
+    });
+}); 

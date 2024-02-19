@@ -12,22 +12,42 @@
 
 			{{ form_start(registrationForm) }}
 
-			
+			{{ form_row(registrationForm.email, {
+                'id': 'email',
+                'attr': {
+                    'autocomplete': 'off',
+                    'pattern': '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                    'title': 'Veuillez saisir une adresse email valide.'
+                }
+            }) }}<br>
 
-			{{ form_row(registrationForm.email , {id:'email'}) }}<br>
-			{{ form_row(registrationForm.emailConfirmation, {id:'emailConfirmation', label: 'Confirmez votre email'}) }}<br> {# Champ de confirmation de l'email #}
+			{{ form_row(registrationForm.emailConfirmation, {
+                'id': 'emailConfirmation',
+                'label': 'Confirmez votre email',
+                'attr': {
+                    'autocomplete': 'off',
+                    'title': 'Veuillez confirmer votre adresse email.'
+                }
+            }) }}<br>
+
 			{{ form_row(registrationForm.plainPassword, {
-            label: 'mot de passe',id:'pwd'}
-        ) }}<br>
-		{{ form_row(registrationForm.plainPasswordConfirmation, {
-                label: 'Confirmez votre mot de passe',id:'pwdConfirmation'}
-            ) }}<br> {# Champ de confirmation du mot de passe #}
+                'label': 'Mot de passe',
+                'id': 'pwd',
+                'attr': {
+                    'pattern': '^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$',
+                    'title': 'Le mot de passe doit contenir au moins une lettre et un chiffre, et avoir une longueur minimale de 8 caractères.'
+                }
+            }) }}<br>
 
-              <div class="custom-form-row">
-    {{ form_widget(registrationForm.agreeTerms) }}
-    {{ form_label(registrationForm.agreeTerms, 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', {'label_attr': {'class': 'custom-label-class'}}) }}
-</div>  
-		
+			{{ form_row(registrationForm.plainPasswordConfirmation, {
+                'label': 'Confirmez votre mot de passe',
+                'id': 'pwdConfirmation'
+            }) }}<br>
+
+			<div class="custom-form-row">
+				{{ form_widget(registrationForm.agreeTerms) }}
+				{{ form_label(registrationForm.agreeTerms, 'En cliquant sur créer un compte, vous acceptez nos Conditions générales ', {'label_attr': {'class': 'custom-label-class'}}) }}
+			</div>
 
 			<button type="submit" class="btn btnM" id="button_register">Créer un compte</button>
 			{{ form_end(registrationForm) }}

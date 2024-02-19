@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class RegistrationFormType extends AbstractType
@@ -21,22 +22,30 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', EmailType::class, [
+                'constraints' => [
+                    new Assert\NotBlank(),
+                    new Assert\Email([
+                        'message' => 'Veuillez entrer une adresse email valide.',
+                    ]),
+                    new Regex([
+                        'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+                        'message' => 'Veuillez entrer une adresse email valide.',
+                    ]),
+                ],
+            ])
             ->add('emailConfirmation', EmailType::class, [
                 'constraints' => [
+                    new Assert\NotBlank(),
                     new Assert\Email([
+                        'message' => 'Veuillez entrer une adresse email valide.',
+                    ]),
+                    new Regex([
+                        'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
                         'message' => 'Veuillez entrer une adresse email valide.',
                     ]),
                     new Assert\Callback([$this, 'validateEmailConfirmation']),
                 ]
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new Assert\IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
@@ -46,22 +55,39 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Entrer un mot de passe valide',
                     ]),
                     new Assert\Length([
-                        'min' => 6,
+                        'min' => 8,
                         'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
-                        'max' => 4096,
+                    ]),
+                    new Regex([
+                        'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
+                        'message' => 'Votre mot de passe doit contenir au moins une lettre et un chiffre.',
                     ]),
                 ],
             ])
             ->add('plainPasswordConfirmation', PasswordType::class, [
                 'mapped' => false,
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Entrer un mot de passe valide',
+                    ]),
+                    new Assert\Length([
+                        'min' => 8,
+                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
+                    ]),
+                    new Regex([
+                        'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
+                        'message' => 'Votre mot de passe doit contenir au moins une lettre et un chiffre.',
+                    ]),
+                ],
+            ])
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new Assert\IsTrue([
+                        'message' => 'Vous devez accepter nos conditions.',
+                    ]),
+                ],
             ]);
-    }
-
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            // Configure your form options here
-        ]);
     }
 
     public function validateEmailConfirmation($emailConfirmation, ExecutionContextInterface $context)
