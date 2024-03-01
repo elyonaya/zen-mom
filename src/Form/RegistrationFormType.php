@@ -28,20 +28,12 @@ class RegistrationFormType extends AbstractType
                     new Assert\Email([
                         'message' => 'Veuillez entrer une adresse email valide.',
                     ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-                        'message' => 'Veuillez entrer une adresse email valide.',
-                    ]),
                 ],
             ])
             ->add('emailConfirmation', EmailType::class, [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Email([
-                        'message' => 'Veuillez entrer une adresse email valide.',
-                    ]),
-                    new Regex([
-                        'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
                         'message' => 'Veuillez entrer une adresse email valide.',
                     ]),
                     new Assert\Callback([$this, 'validateEmailConfirmation']),
@@ -58,10 +50,6 @@ class RegistrationFormType extends AbstractType
                         'min' => 8,
                         'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
                     ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
-                        'message' => 'Votre mot de passe doit contenir au moins une lettre et un chiffre.',
-                    ]),
                 ],
             ])
             ->add('plainPasswordConfirmation', PasswordType::class, [
@@ -73,10 +61,6 @@ class RegistrationFormType extends AbstractType
                     new Assert\Length([
                         'min' => 8,
                         'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
-                    ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
-                        'message' => 'Votre mot de passe doit contenir au moins une lettre et un chiffre.',
                     ]),
                 ],
             ])

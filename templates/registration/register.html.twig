@@ -15,8 +15,6 @@
 			{{ form_row(registrationForm.email, {
                 'id': 'email',
                 'attr': {
-                    'autocomplete': 'off',
-                    'pattern': '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
                     'title': 'Veuillez saisir une adresse email valide.'
                 }
             }) }}<br>
@@ -34,7 +32,6 @@
                 'label': 'Mot de passe',
                 'id': 'pwd',
                 'attr': {
-                    'pattern': '^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$',
                     'title': 'Le mot de passe doit contenir au moins une lettre et un chiffre, et avoir une longueur minimale de 8 caractères.'
                 }
             }) }}<br>
