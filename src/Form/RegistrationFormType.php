@@ -47,9 +47,20 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Entrer un mot de passe valide',
                     ]),
                     new Assert\Length([
-                        'min' => 8,
+                        'min' => 12,
                         'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
                     ]),
+                    new Regex([
+
+                        'pattern' =>
+                        
+                        '/^(?=.*[0-9!@#$%^&*()_+{}[\]:;<>,.?~]).+$/',
+                        
+                        'message' => 'Le mot de passe doit contenir au moins
+                        
+                        un chiffre ou un caractère spécial',
+                        
+                        ]),
                 ],
             ])
             ->add('plainPasswordConfirmation', PasswordType::class, [
@@ -59,9 +70,20 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Entrer un mot de passe valide',
                     ]),
                     new Assert\Length([
-                        'min' => 8,
+                        'min' => 12,
                         'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères.',
                     ]),
+                    new Regex([
+
+                        'pattern' =>
+                        
+                        '/^(?=.*[0-9!@#$%^&*()_+{}[\]:;<>,.?~]).+$/',
+                        
+                        'message' => 'Le mot de passe doit contenir au moins
+                        
+                        un chiffre ou un caractère spécial',
+                        
+                        ]),
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
