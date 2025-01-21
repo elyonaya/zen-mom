@@ -10,19 +10,19 @@
             <form method="post">
                 <div id="Connexion">
                     <img src="{{ asset('images/logo_connexion.png') }}" alt="Logo de connexion">
-                    <h2 class="h3 mb-3 font-weight-normal">connexion</h2>
+                    <h2 class="h3 mb-3 font-weight-normal">Connexion</h2>
                 </div>
-                <label for="inputEmail">Email</label><br>
+                <label for="inputEmail">E-mail</label><br>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"  autocomplete="off" autocapitalize="off" spellcheck="false" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required autofocus><br><br>
-                <label for="inputPassword">Password</label><br>
+                <label for="inputPassword">Mot de passe</label><br>
                 <input type="password" name="password" id="inputPassword" class="form-control"  autocomplete="off" autocapitalize="off" spellcheck="false" pattern="^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required><br><br>
                 <input type="checkbox" id="se-souvenir" name="se-souvenir">
                 <label for="se-souvenir">Se souvenir de moi</label>
-                <a href="{{ path('reset-password') }}" id="href">Mot de passe oublié</a><br><br>
+                <a href="{{ path('reset-password') }}" id="href">Mot de passe oublié</a><br>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                 <div id="divM">
                     <button class="btn btnV btnM" type="submit">
-                        Connectez-vous
+                        Se connecter
                     </button>
                     <div id="divFille">
                         <h3 class="h3 mb-3 font-weight-normal">ou</h3>

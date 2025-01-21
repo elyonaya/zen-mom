@@ -46,7 +46,7 @@ class UserType extends AbstractType
           ])
             ->add('prenom', TextType::class, [
                 'required' => true,
-                'label' => "Prenom" ,
+                'label' => "Prénom" ,
                 'constraints' => [
                     new Length([
                         'min' => 3,
@@ -56,7 +56,7 @@ class UserType extends AbstractType
             ])
             ->add('datenaissance', BirthdayType::class, [
                 'required' => true,
-                'label' => "date de naissance"
+                'label' => "Date de naissance"
             ])
             ->add('adresse1', TextareaType::class, [
                 'label' => "Adresse"

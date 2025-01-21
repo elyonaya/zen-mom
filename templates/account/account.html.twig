@@ -11,9 +11,6 @@
    {% if app.user %}
 				<div class="mb-3">
 				    <div class="mb-2">
-					Bonjour
-					{{ app.user.prenom }}
-					{{ app.user.nom }}
 					</div>
 					<div>
 						<a href="{{ path('app_logout') }}">Déconnexion</a>
@@ -24,15 +21,13 @@
    </div>
    <div id="interne">
 		<aside>
+		<br><br>
 			<!--Les informations personnelles-->
 			<div class="mes-informations">
-				<div id="imgperso">
-					<img src="{{ asset('') }}" alt="">
-				</div>
 				<div class="menu">
 					<button id="info">Mes informations</button>
 					<button>Mes cartes cadeaux</button>
-					<button>Mes reservations</button>
+					<button>Mes réservations</button>
 					<button>Gérer mon compte</button>
 				</div>
 			</div>
